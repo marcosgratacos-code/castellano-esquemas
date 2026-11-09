@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Castellano · Esquema del Parcial 2</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --surface: #ffffff; --surface-2: #eef0f4; --text: #1b2230; --muted: #5d6779; --border: #dde1e8;
+    --accent: #e0457b; --link: #2f6fde;
+    --ok-bg: #dff3e6; --ok-fg: #14612f; --warn-bg: #fdf0cf; --warn-fg: #7a5200; --bad-bg: #fbdcdc; --bad-fg: #8f1d1d;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f131a; --surface: #171c26; --surface-2: #202737; --text: #e8ecf3; --muted: #9aa5b8; --border: #2a3345;
+      --accent: #ff7aa8; --link: #6b9bff;
+      --ok-bg: #173a27; --ok-fg: #8fe0ae; --warn-bg: #3d3112; --warn-fg: #f2d27a; --bad-bg: #432020; --bad-fg: #ffa3a3;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 4px; letter-spacing: -.02em; }
+  h2 { font-size: 1.25rem; margin: 34px 0 10px; padding-bottom: 6px; border-bottom: 3px solid var(--accent); }
+  h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+  h4 { font-size: .95rem; margin: 16px 0 6px; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+  .sub { color: var(--muted); margin: 0 0 18px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 18px; margin: 12px 0; }
+  .note { border-radius: 12px; padding: 12px 16px; margin: 12px 0; border: 1px solid var(--border); }
+  .note.warn { background: var(--warn-bg); color: var(--warn-fg); border-color: transparent; }
+  .note.bad { background: var(--bad-bg); color: var(--bad-fg); border-color: transparent; }
+  .note.ok { background: var(--ok-bg); color: var(--ok-fg); border-color: transparent; }
+  .note b { font-weight: 800; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: .93rem; }
+  th, td { border: 1px solid var(--border); padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--surface-2); font-size: .82rem; text-transform: uppercase; letter-spacing: .03em; }
+  .tw { overflow-x: auto; }
+  .src { display: inline-block; font-size: .72rem; font-weight: 800; padding: 1px 7px; border-radius: 6px; background: var(--surface-2); color: var(--muted); white-space: nowrap; }
+  .tag { display: inline-block; font-size: .72rem; font-weight: 800; padding: 1px 7px; border-radius: 6px; }
+  .tag.ok { background: var(--ok-bg); color: var(--ok-fg); }
+  .tag.warn { background: var(--warn-bg); color: var(--warn-fg); }
+  .tag.bad { background: var(--bad-bg); color: var(--bad-fg); }
+  .ex { color: var(--muted); font-style: italic; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+  .toc { columns: 2 260px; margin: 8px 0 0; padding-left: 18px; }
+  .toc a { color: var(--link); text-decoration: none; }
+  .chk { display: flex; gap: 8px; align-items: flex-start; }
+  .chk input { margin-top: 5px; width: 18px; height: 18px; flex: none; accent-color: var(--accent); }
+  .chk.done span { text-decoration: line-through; color: var(--muted); }
+  code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-size: .9em; }
+  @media print {
+    :root { --bg: #fff; --surface: #fff; --surface-2: #f0f0f0; --text: #000; --muted: #333; --border: #999; }
+    body { font-size: 10.5pt; }
+    .wrap { max-width: none; padding: 0; }
+    h2 { break-after: avoid; } table, .card, .note { break-inside: avoid; }
+    .noprint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Castellano · Esquema del Parcial 2 (p2-T1)</h1>
+<p class="sub">1.º Bachillerato · Lengua Castellana y Literatura I. Apuntes no oficiales elaborados a partir de los contenidos de la asignatura y del libro de clase (LAT). Las etiquetas <span class="src">LAT p.N</span> indican la página del libro.</p>
+
+<div class="note warn">
+  <b>Dos avisos importantes</b>
+  <ul>
+    <li><b>Este esquema es para el Parcial 2 (p2-T1).</b> Si tu profesor ha dicho que el examen incluye otra cosa, manda lo que él diga.</li>
+    <li><b>No incluye todo el material de clase</b> (lista en el <a href="#falta">apartado final</a>): dosieres y presentaciones, la novela <i>Disidente y perseguido</i> y las respuestas de los ejercicios de clase. Esos puntos, míralos tú en tu material.</li>
+  </ul>
+</div>
+
+<div class="card noprint">
+  <b>Índice</b>
+  <ol class="toc">
+    <li><a href="#mapa">Mapa del examen</a></li>
+    <li><a href="#reglas">Reglas de nota</a></li>
+    <li><a href="#lectora">Comprensión lectora</a></li>
+    <li><a href="#literario">Saber literario</a></li>
+    <li><a href="#linguistica">Reflexión lingüística</a></li>
+    <li><a href="#escrita">Expresión escrita</a></li>
+    <li><a href="#antes">Antes de entregar</a></li>
+    <li><a href="#plan">Plan de repaso para esta noche</a></li>
+    <li><a href="#falta">Lo que no he podido ver</a></li>
+  </ol>
+</div>
+
+<!-- ===================================================== -->
+<h2 id="mapa">1. Mapa del examen</h2>
+<p>Qué entra en el Parcial 2 según el documento de contenidos. Marca lo que ya domines (se guarda en este navegador).</p>
+<div class="tw"><table id="mapa-tabla">
+  <thead><tr><th>Bloque</th><th>Qué entra</th><th>Fuente</th><th>Material</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="1"><b>Comprensión lectora</b></td><td data-c="lectora">Un texto (no sé cuál; se entrega en el examen)</td><td>—</td><td><span class="tag warn">método general</span></td></tr>
+    <tr><td rowspan="4"><b>Saber literario</b></td><td data-c="conceptos">Conceptos literarios</td><td><span class="src">LAT pp.20-36</span></td><td><span class="tag ok">en este esquema</span></td></tr>
+    <tr><td data-c="comparar">Ejercicio de saber literario: comparar textos</td><td><span class="src">LAT p.48 y ss.</span></td><td><span class="tag ok">corpus + plantilla</span></td></tr>
+    <tr><td data-c="figuras">Figuras retóricas 1 (formato selectividad)</td><td>dosier (≈ <span class="src">LAT pp.14-16</span>)</td><td><span class="tag warn">del libro; falta el dosier</span></td></tr>
+    <tr><td data-c="novela">Lectura de <i>Disidente y perseguido</i> (pp. 83-183)</td><td>novela</td><td><span class="tag bad">no la tengo</span></td></tr>
+    <tr><td rowspan="5"><b>Reflexión lingüística</b></td><td data-c="morfologia">Morfología</td><td><span class="src">LAT pp.121-128</span></td><td><span class="tag ok">en este esquema</span></td></tr>
+    <tr><td data-c="gal">GAL-1 · categorías gramaticales: nombre, determinante, adjetivo, pronombre, adverbio, conjunción, preposición</td><td><span class="src">LAT pp.134-137</span> + fotocopia</td><td><span class="tag ok">en este esquema</span></td></tr>
+    <tr><td data-c="verbos">Clases de verbos 1 (10 clases)</td><td>ppt + <span class="src">LAT pp.137-138</span></td><td><span class="tag ok">del libro; falta el ppt</span></td></tr>
+    <tr><td data-c="pm">Pares mínimos 10-23 · Análisis inverso 1-5</td><td>hoja de ejercicios</td><td><span class="tag ok">formato y método (§5.4)</span></td></tr>
+    <tr><td data-c="gramsig">ppt «Gramática y significado (introducción)»</td><td>clase</td><td><span class="tag bad">no lo tengo</span></td></tr>
+    <tr><td rowspan="2"><b>Expresión escrita</b></td><td data-c="argumentar">Guía para aprender a argumentar · escribir una breve argumentación</td><td><span class="src">LAT pp.37-47</span></td><td><span class="tag ok">en este esquema</span></td></tr>
+    <tr><td data-c="escribirbien">«Cómo escribir bien» (apuntes de una presentación)</td><td>clase</td><td><span class="tag bad">no lo tengo</span></td></tr>
+  </tbody>
+</table></div>
+
+<h4>Qué NO entra en este parcial (no pierdas tiempo)</h4>
+<p>Es de otros parciales: puntuación y acentuación (P1; <b>pero cuentan como errores</b>, ver §2), vocabulario de <i>Disidente</i> (P1), figuras retóricas II (P5-P6), clases de verbos II, perífrasis, <i>se</i> (P3), Tema 7 de sintaxis, funciones sintácticas, <i>El camino</i>, lírica y géneros del Tema 5, semántica.</p>
+
+<!-- ===================================================== -->
+<h2 id="reglas">2. Reglas de nota</h2>
+<ul>
+  <li><b>Parcial = examen 90 % + actividades 10 %.</b></li>
+  <li><b>Cada error</b> ortográfico, de léxico, de puntuación o de morfosintaxis resta <b>0,1</b>, <b>sin límite</b>. Los errores <b>repetidos cuentan como errores</b> cada vez.</li>
+  <li>Con dislexia o disortografía se aplica un tercio de la penalización.</li>
+  <li>Revisión del examen: solo hasta <b>3 días</b> después de la devolución (festivos incluidos).</li>
+  <li>Se puede mejorar la nota de <b>un parcial por trimestre</b> con actividades voluntarias que fije el profesor.</li>
+</ul>
+
+<!-- ===================================================== -->
+<h2 id="lectora">3. Comprensión lectora</h2>
+<div class="note warn">No sé qué texto va a caer ni qué preguntas hará el profesor. Esto es un método general, no sale de tu libro.</div>
+<ol>
+  <li>Lee el texto una vez entero, sin parar; después otra con lápiz.</li>
+  <li>Localiza el <b>tema</b> (de qué trata, en pocas palabras) y la <b>tesis</b> o idea principal (qué defiende o cuenta).</li>
+  <li>Divide en <b>partes</b> (introducción / desarrollo / conclusión o planteamiento / nudo / desenlace) y resume cada una en una frase.</li>
+  <li>Si es argumentativo: identifica <b>tesis y premisas</b> (vocabulario de la Guía de argumentar, §6).</li>
+  <li>Si es literario: <b>género, narrador/yo poético, recursos</b> (§4).</li>
+  <li>Responde con tus propias palabras y revisa ortografía: cada error resta 0,1.</li>
+</ol>
+
+<!-- ===================================================== -->
+<h2 id="literario">4. Saber literario</h2>
+
+<h3 id="conceptos">4.1 Conceptos literarios <span class="src">LAT pp.20-36</span></h3>
+<p class="ex">El libro indica: «Los términos de esta sección entran en la selectividad».</p>
+
+<h4>Introducción: género y texto literario</h4>
+<ul>
+  <li><b>Géneros literarios:</b> clases de textos con características comunes de contenido o forma (temas, ideas, actitud del escritor, prosa o verso). Tres grandes: <b>poesía o lírica</b>, <b>narrativa</b> y <b>teatro o dramática</b>, cada uno con subgéneros.</li>
+  <li><b>Texto literario:</b> combina <b>mímesis</b> (imitación de la realidad) y <b>ficción</b> (fantasía). Usa un <b>lenguaje literario</b> que se desvía de la norma y es <b>polisémico y connotativo</b>.</li>
+  <li>El <b>lector</b> reconstruye el texto e interpreta. El <b>canon literario</b> es el conjunto de textos de la historia literaria considerados fundamentales.</li>
+  <li><b>Recursos retóricos:</b> fónicos, morfosintácticos y semánticos.</li>
+</ul>
+
+<h4>Género narrativo (narrativa)</h4>
+<ul>
+  <li><b>Elementos:</b> narrador, argumento, personajes, estructura, espacio y tiempo.</li>
+  <li><b>Subgéneros en verso:</b> epopeya, cantar de gesta, poema épico, romance, fábula. <b>En prosa:</b> novela, cuento, leyenda, microrrelato, novela gráfica.</li>
+</ul>
+<div class="tw"><table>
+  <caption style="text-align:left;font-weight:700;padding:4px 0">Estilos al transmitir lo que dicen los personajes</caption>
+  <thead><tr><th>Estilo</th><th>Qué es</th></tr></thead>
+  <tbody>
+    <tr><td><b>Directo</b></td><td>El narrador cede la voz a los personajes, que hablan con sus propias palabras.</td></tr>
+    <tr><td><b>Indirecto</b></td><td>El narrador incorpora lo que dicen a su propia voz, con verbo <i>dicendi</i> + conjunción («que», «si»).</td></tr>
+    <tr><td><b>Indirecto libre</b></td><td>Narrador en 3.ª persona que recoge palabras o pensamientos como si fueran directos, pero <b>sin verbo dicendi, sin nexos y sin marcas tipográficas</b>. <span class="ex">(Cortázar, <i>Cuentos</i>)</span></td></tr>
+  </tbody>
+</table></div>
+
+<h4>Narrador, punto de vista y comunicación</h4>
+<ul>
+  <li><b>Punto de vista (perspectiva):</b> ángulo del narrador; respecto a la persona (1.ª, 2.ª, 3.ª) y a la posición (omnisciente, protagonista, secundario…).</li>
+  <li><b>Narratario:</b> personaje al que el narrador dirige el relato; forma parte de la ficción <span class="ex">(en <i>Cinco horas con Mario</i>, el marido muerto)</span>.</li>
+  <li><b>Lector:</b> está fuera del mundo del texto, en el mismo plano que el autor; es el destinatario del mensaje literario.</li>
+</ul>
+<div class="tw"><table>
+  <thead><tr><th>Narrador</th><th>Persona</th><th>Cómo es</th><th>Ejemplos del libro</th></tr></thead>
+  <tbody>
+    <tr><td><b>Externo omnisciente</b></td><td>3.ª</td><td>Conoce todos los detalles, incluso el futuro y lo que piensa cada personaje; el que más profundiza en lo psicológico.</td><td class="ex"><i>El camino</i> (Delibes), <i>Crónica de una muerte anunciada</i></td></tr>
+    <tr><td><b>Externo observador</b></td><td>3.ª</td><td>Cuenta solo lo que vería u oiría un testigo (acciones, gestos, palabras, ambiente); no accede al interior de los personajes; visión limitada, «como una cámara».</td><td class="ex"><i>El Jarama</i> (Sánchez Ferlosio)</td></tr>
+    <tr><td><b>Interno protagonista</b></td><td>1.ª</td><td>Cuenta su propia experiencia desde su punto de vista; asume el papel principal.</td><td class="ex"><i>El último cliente de la noche</i> (Duras), <i>Adolphe</i></td></tr>
+    <tr><td><b>Interno testigo</b></td><td>1.ª</td><td>Participa pero <b>no es protagonista</b>; relata lo que ha presenciado o conocido de cerca.</td><td class="ex"><i>El gran Gatsby</i>, <i>Los asesinos</i> (Hemingway)</td></tr>
+    <tr><td><b>Interno en 2.ª persona</b></td><td>2.ª</td><td>Muy poco común; se dirige a un «tú/usted»; puede ser epistolar; a veces apela al lector.</td><td class="ex"><i>Carta a una señorita en París</i> (Cortázar), <i>Cinco horas con Mario</i></td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><b>Diálogo:</b> conversación entre dos o más personas. <b>Monólogo:</b> habla o reflexiona consigo mismo (en teatro, poema o novela).</li>
+  <li><b>Monólogo interior:</b> recurso de la narrativa contemporánea; discurso mental no pronunciado, «mensaje sin receptor formal» <span class="ex">(<i>Ulises</i>, <i>Las olas</i>)</span>.</li>
+</ul>
+
+<h4>Historia, estructura y tiempo</h4>
+<div class="tw"><table>
+  <thead><tr><th>Concepto</th><th>Definición</th></tr></thead>
+  <tbody>
+    <tr><td><b>Argumento</b></td><td>Conjunto de acontecimientos de una historia (no es «razonamiento»).</td></tr>
+    <tr><td><b>Estructura</b></td><td>Vínculo entre los elementos del texto. <b>Lineal</b>: hechos en orden cronológico. <b>Circular</b>: termina en el punto de partida.</td></tr>
+    <tr><td><b>In media res / ab ovo</b></td><td><i>In media res</i>: empezar en medio de la acción (<i>La Odisea</i>). <i>Ab ovo</i>: empezar por el principio de la historia (<i>Robinson Crusoe</i>, <i>El hobbit</i>).</td></tr>
+    <tr><td><b>Tiempo externo / interno</b></td><td><b>Externo</b>: tiempo histórico en que suceden los hechos. <b>Interno</b>: duración de los hechos dentro del relato.</td></tr>
+    <tr><td><b>Anacronía</b></td><td>Alteración del orden cronológico. Dos formas: <b>prolepsis o <i>flashforward</i></b> (adelantar sucesos que ocurrirán después) y <b>analepsis o <i>flashback</i></b> (relatar sucesos anteriores al presente de la obra).</td></tr>
+    <tr><td><b>Elipsis</b></td><td>Suprimir acontecimientos que se pueden recuperar luego o por el contexto (también es un recurso retórico).</td></tr>
+    <tr><td><b>Anagnórisis</b></td><td>Reconocimiento de un personaje por otro, que lleva al desenlace (Ulises reconocido por Argos, Telémaco y Laertes). Muy usada en el Siglo de Oro.</td></tr>
+    <tr><td><b>Relato</b></td><td>Narración oral o escrita de hechos reales o imaginarios; se centra en la historia.</td></tr>
+    <tr><td><b>Espacio / ambiente</b></td><td>Espacio: lugar donde se desarrolla la acción. Ambiente: ámbito social, geográfico, histórico y cultural en que actúan los personajes.</td></tr>
+    <tr><td><b>Verosimilitud</b></td><td>La obra da ilusión de realidad.</td></tr>
+    <tr><td><b>Protagonista / antagonista</b></td><td>Personaje principal / personaje opuesto al protagonista en la trama.</td></tr>
+    <tr><td><b>Intertextualidad</b></td><td>Presencia en una obra de referencias, citas, alusiones, temas o rasgos de otros textos.</td></tr>
+    <tr><td><b>Acción principal / secundarias</b></td><td>Sucesos principales del relato / acontecimientos que no son los principales.</td></tr>
+  </tbody>
+</table></div>
+
+<h4>Género lírico (poesía)</h4>
+<ul>
+  <li>Género <b>subjetivo</b>: el autor expresa sentimientos, deseos, emociones, ideología y visión del mundo. Forma habitual: el <b>verso</b>. Temas: amor, muerte, tristeza, dolor (también temas banales).</li>
+  <li><b>Yo poético:</b> la voz construida que «suena» en el poema y que media entre el poeta y el lector. Puede ser un personaje mitológico, un animal o una flor.</li>
+  <li><b>Elementos del discurso lírico:</b> versificación y rima.</li>
+  <li><b>Subgéneros:</b> elegía, oda, égloga, canción, sátira.</li>
+</ul>
+
+<h4>Género dramático (teatro)</h4>
+<ul>
+  <li>Obras con <b>doble dimensión</b> (textual y espectacular): se desarrolla una historia mediante el <b>diálogo</b>, sin voz narradora. Se escribe para ser representado, aunque también se lee.</li>
+  <li><b>Elementos verbales:</b> diálogo y acotaciones. <b>No verbales:</b> interpretación, escenografía, música…</li>
+  <li><b>Estructura interna:</b> planteamiento, nudo y desenlace. <b>Externa:</b> <b>actos</b> (partes entre descansos o telón), <b>cuadros</b> (cambios de tiempo o lugar dentro de un acto) y <b>escenas</b> (partes del acto en que intervienen los mismos personajes).</li>
+  <li><b>Subgéneros:</b> tragedia, comedia, drama, tragicomedia. Teatro popular: sainete, guiñol.</li>
+</ul>
+<div class="tw"><table>
+  <thead><tr><th>Término teatral</th><th>Definición</th></tr></thead>
+  <tbody>
+    <tr><td><b>Aparte</b></td><td>Un personaje dice unas palabras al público suponiendo que los demás personajes no las oyen; revela pensamientos o intenciones.</td></tr>
+    <tr><td><b>Decorado</b></td><td>Elementos físicos de la escenografía (muebles, telones, estructuras) que sitúan al espectador.</td></tr>
+    <tr><td><b>Diálogo</b></td><td>Forma principal de comunicación en el teatro; desarrolla la acción y revela relaciones y conflictos.</td></tr>
+    <tr><td><b>Acotación</b></td><td>Indicaciones del dramaturgo (entre paréntesis o en cursiva) sobre gestos, movimientos, entonación, iluminación o decoración. <span class="ex">(<i>La casa de Bernarda Alba</i>)</span></td></tr>
+    <tr><td><b>Pausa</b></td><td>Interrupción breve del discurso o de la acción, para dar énfasis, cambiar el ritmo o aumentar la tensión; puede ser verbal o física.</td></tr>
+  </tbody>
+</table></div>
+
+<h3 id="comparar">4.2 Ejercicio de saber literario: comparar textos <span class="src">LAT p.48 y ss.</span></h3>
+<p>El documento remite a «LAT p.48 y siguientes», la <b>Antología de textos literarios y teoría</b> (pp.48-67). No sé cuáles de estos textos usará el profesor, así que este es el corpus completo:</p>
+<div class="tw"><table>
+  <thead><tr><th>Época</th><th>Textos</th><th>Páginas</th></tr></thead>
+  <tbody>
+    <tr><td><b>Edad Media</b> (Tema 4)</td><td>Lírica tradicional (<i>No la debemos dormir</i>, de fray Ambrosio Montesino; <i>Al alba venid, buen amigo</i>) · <i>Cantar de Mio Cid</i> · Romances (<i>Romance del prisionero</i>) · <i>Milagros de Nuestra Señora</i> · <i>El conde Lucanor</i> · <i>Coplas a la muerte de su padre</i> · <i>La Celestina</i></td><td class="ex">48-50</td></tr>
+    <tr><td><b>Renacimiento</b> (Tema 5)</td><td>Santa Teresa (<i>Nada te turbe</i>) · San Juan de la Cruz (<i>El pastorcico</i>) · Garcilaso (<i>Égloga III</i>, <i>Soneto V</i>) · Fray Luis de León (<i>Oda a la vida retirada</i>)</td><td class="ex">50-52</td></tr>
+    <tr><td><b>Barroco</b></td><td>Quevedo (<i>Contra Góngora</i>, <i>A una nariz</i>, sonetos) · Lope de Vega (sonetos)</td><td class="ex">52-58</td></tr>
+    <tr><td><b>Siglos XVIII-XIX</b></td><td>Samaniego (<i>La zorra y las uvas</i>) · Espronceda (<i>Canción del pirata</i>) · Bécquer (<i>Rima LIII</i>) · Rubén Darío · Larra (<i>El pobrecito hablador</i>, n.º 11, 1833)</td><td class="ex">58-65</td></tr>
+    <tr><td><b>Siglo XX</b></td><td>Manuel Machado (<i>Ocaso</i>, <i>Castilla</i>, <i>Retrato</i>)</td><td class="ex">65-67</td></tr>
+  </tbody>
+</table></div>
+<div class="note warn"><b>Plantilla para comparar</b> (orientativa; no es del profesor). Para dos textos, contesta lo mismo y marca semejanzas y diferencias:
+  <ol>
+    <li><b>Tema</b> y actitud ante él (amor, muerte, paso del tiempo, libertad…).</li>
+    <li><b>Género y subgénero</b> (lírico, narrativo, dramático; soneto, romance, relato…).</li>
+    <li><b>Voz:</b> yo poético o tipo de narrador (§4.1).</li>
+    <li><b>Forma:</b> verso o prosa; estrofa y rima si es verso.</li>
+    <li><b>Recursos retóricos</b> más llamativos (§4.3).</li>
+    <li><b>Época o movimiento</b> y qué rasgos lo muestran.</li>
+  </ol>
+  Conectores útiles: <i>mientras que, en cambio, por el contrario, asimismo, del mismo modo, ambos textos…</i>
+</div>
+
+<h3 id="figuras">4.3 Figuras retóricas 1 <span class="src">LAT pp.14-16</span></h3>
+<div class="note warn">El documento dice «Figuras retóricas 1 (dosier), según la forma de preguntas de la selectividad». Aquí uso las <b>Figuras retóricas I</b> del libro (pp.14-16), que parecen ser lo mismo; el dosier de clase no está incluido. Lo habitual: identificar la figura en un fragmento y justificarla.</div>
+<div class="tw"><table>
+  <thead><tr><th>Figura</th><th>Definición</th><th>Ejemplo del libro</th></tr></thead>
+  <tbody>
+    <tr><td><b>Oxímoron</b></td><td>Contraposición de dos términos en un <b>mismo sintagma</b>.</td><td class="ex">«hielo abrasador», «fuego helado» (Quevedo)</td></tr>
+    <tr><td><b>Paradoja</b></td><td>Idea contradictoria <b>pero con sentido</b>, para expresar nuevos matices.</td><td class="ex">«que muero porque no muero»</td></tr>
+    <tr><td><b>Paralelismo</b></td><td>Repetición de una frase en varios versos con leves modificaciones (también en prosa).</td><td class="ex">«Este es nuestro momento. Este es nuestro tiempo…» (Obama)</td></tr>
+    <tr><td><b>Paronomasia</b></td><td>Palabras próximas por sonido, de significado distinto.</td><td class="ex">«Tanta tinta tonta que te atenta y que te atonta»</td></tr>
+    <tr><td><b>Personificación</b></td><td>Atribuir cualidades humanas a un ser inanimado o a un animal.</td><td class="ex">«La tierra dice: ¿por qué le sustento?»</td></tr>
+    <tr><td><b>Epífora</b></td><td>Repetir las mismas palabras <b>al final</b> de frases o versos.</td><td class="ex">«una hoja cuya rama no existe, / un mundo cuyo cielo no existe» (Cernuda)</td></tr>
+    <tr><td><b>Epíteto</b></td><td>Adjetivo calificativo innecesario que destaca una cualidad habitual del sustantivo.</td><td class="ex">«el blanco lirio» (Garcilaso)</td></tr>
+    <tr><td><b>Eufemismo</b></td><td>Sustituir una palabra o expresión desagradable por otra de connotaciones menos negativas.</td><td class="ex">«ha pasado a mejor vida»; «daños colaterales»</td></tr>
+    <tr><td><b>Hipérbaton</b></td><td>Alterar el orden gramatical de las palabras para destacar elementos.</td><td class="ex">«Del monte en la ladera por mi mano plantado tengo un huerto» (Fray Luis)</td></tr>
+    <tr><td><b>Hipálage</b></td><td>Atribuir a un sustantivo una cualidad o acción propia de otro cercano, rompiendo la relación lógica.</td><td class="ex">«el oro temeroso del avaro»; «la sombría mirada del bosque»</td></tr>
+    <tr><td><b>Hipérbole</b></td><td>Exageración; describir las cosas fuera de sus proporciones normales.</td><td class="ex">«Érase un hombre a una nariz pegado» (Quevedo)</td></tr>
+    <tr><td><b>Aliteración</b> (onomatopeya)</td><td>Repetición de ciertos sonidos, sobre todo consonánticos, para lograr un efecto.</td><td class="ex">«un susurro de abejas que sonaba» (Garcilaso)</td></tr>
+    <tr><td><b>Anadiplosis</b></td><td>Repetir al principio de un verso o grupo la <b>última palabra</b> del anterior.</td><td class="ex">«Hablan las lenguas y lloran. Lloran las almas y cantan.»</td></tr>
+    <tr><td><b>Anáfora</b></td><td>Repetición de una o más palabras <b>al comienzo</b> de varios versos, estrofas o frases.</td><td class="ex">«aquí fue Troya, aquí mi desdicha… aquí usó la fortuna…» (Cervantes)</td></tr>
+    <tr><td><b>Antítesis</b></td><td>Unión de ideas contrarias para resaltarlas.</td><td class="ex">«Con mayor frío vos; yo con más fuego» (Herrera)</td></tr>
+  </tbody>
+</table></div>
+<h4>Confusiones típicas</h4>
+<ul>
+  <li><b>Oxímoron</b> (contradicción dentro de <u>un mismo sintagma</u>) frente a <b>antítesis</b> (dos ideas contrarias enfrentadas) y <b>paradoja</b> (frase contradictoria que encierra una verdad).</li>
+  <li><b>Anáfora</b> (repite al <u>principio</u>) frente a <b>epífora</b> (repite al <u>final</u>); <b>anadiplosis</b> (la última palabra pasa a ser la primera siguiente).</li>
+  <li><b>Hipérbaton</b> (cambia el <u>orden</u> de las palabras) frente a <b>hipálage</b> (cambia a quién se atribuye la <u>cualidad</u>).</li>
+  <li><b>Aliteración</b> (repite <u>sonidos</u>) frente a <b>paronomasia</b> (<u>palabras</u> parecidas de significado distinto).</li>
+</ul>
+
+<h3 id="novela">4.4 <i>Disidente y perseguido</i> (pp. 83-183)</h3>
+<div class="note bad">No tengo la novela. El documento dice que en el Parcial 2 «se lee toda la novela» (y en el examen trimestral «no habrá preguntas de la novela»). Repasa tú el argumento, personajes, narrador, espacio y tiempo con tus notas de lectura. Si quieres, usa el esquema de §4.1 (narrador, estructura, tiempo, espacio) para ordenarlo.</div>
+
+<!-- ===================================================== -->
+<h2 id="linguistica">5. Reflexión lingüística</h2>
+
+<h3 id="morfologia">5.1 Morfología <span class="src">LAT pp.121-128</span></h3>
+<p class="ex">En el libro dice «se corresponde con una presentación en ppt»; aquí está lo que figura en el libro.</p>
+
+<h4>Conceptos previos</h4>
+<ul>
+  <li><b>Morfología:</b> parte de la lingüística que estudia la <b>estructura interna de las palabras</b>.</li>
+  <li><b>Campo semántico:</b> palabras que comparten un núcleo de significado (ámbito de ideas), aunque sean de distintas categorías. <span class="ex">«ropa»: camisa, pantalón, vestido, abrigo…</span></li>
+  <li><b>Familia léxica:</b> palabras con la <b>misma raíz</b>, distintos afijos. <span class="ex">«pan»: pan, panadero, panadería, empanar, empanada.</span></li>
+</ul>
+
+<h4>Clases especiales de sustantivos</h4>
+<div class="tw"><table>
+  <thead><tr><th>Clase</th><th>Qué es</th><th>Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><b>Común en cuanto al género</b></td><td>Misma forma para masculino y femenino; cambia el determinante.</td><td class="ex">el/la astronauta, el/la ciclista</td></tr>
+    <tr><td><b>Epiceno</b></td><td>Un solo género gramatical para los dos sexos.</td><td class="ex">la víctima, la pantera</td></tr>
+    <tr><td><b>Heterónimo</b></td><td>Lexemas distintos para cada sexo.</td><td class="ex">caballo/yegua, padre/madre</td></tr>
+    <tr><td><b>Ambiguo</b></td><td>Se usa en masculino o femenino sin cambiar de significado.</td><td class="ex">el mar / la mar, el maratón / la maratón</td></tr>
+    <tr><td><b>Singularia tantum</b></td><td>Solo en singular.</td><td class="ex">sed, salud, cénit, tino, oeste</td></tr>
+    <tr><td><b>Pluralia tantum</b></td><td>Solo en plural.</td><td class="ex">tirantes, natillas, ojeras, víveres</td></tr>
+    <tr><td><b>Gentilicio</b></td><td>Perteneciente o relativo a las gentes o naciones.</td><td class="ex">brasileño, asturiano, español</td></tr>
+  </tbody>
+</table></div>
+
+<h4>Morfema, raíz y afijos</h4>
+<ul>
+  <li>La <b>palabra</b> es la unidad máxima de la morfología; el <b>morfema</b> es la unidad gramatical mínima con significado. <b>Alomorfos:</b> variantes de un mismo morfema <span class="ex">(imperfecto / irracional; caluroso / calor)</span>.</li>
+  <li><b>Dos clases de morfemas:</b> <b>raíz</b> (significado léxico básico) y <b>afijos</b> (se unen a la raíz).</li>
+  <li><b>Por su función, los afijos son:</b> <b>derivativos</b> (modifican el significado del lexema) o <b>flexivos</b> (género, número, tiempo, modo…: <i>niñ-o-s</i>, <i>cant-a-ba-mos</i>).</li>
+  <li><b>Por su posición:</b> <b>prefijos</b> (antes: <i>pre</i>-cocinado), <b>sufijos</b> (después: pre-cocin-<i>ad-o</i>), <b>interfijos</b> (entre base y sufijo: caf-<i>ec</i>-ito); el esquema del libro añade el <b>infijo</b> (<i>Carl-it-os</i>).</li>
+  <li><b>Regla práctica del libro:</b> los prefijos solo son derivativos; los sufijos pueden ser derivativos o flexivos. En los ejercicios: «prefijo derivativo», «sufijo derivativo», «sufijo flexivo».</li>
+</ul>
+<div class="card">
+  <b>Esquema 2 del libro · clases de morfemas</b> <span class="src">LAT p.123</span><br>
+  <b>Morfema</b> → <b>raíz</b> | <b>afijo</b><br>
+  <b>Afijo</b> → <b>flexivo</b> (nominal o verbal) | <b>derivativo</b> (prefijo, sufijo, interfijo, infijo)<br>
+  <b>Flexivo nominal:</b> marca de palabra (<i>gent-e</i>), morfema de género (<i>algun-a-s</i>), morfema de número (<i>pequeñ-a-s</i>)<br>
+  <b>Flexivo verbal:</b> vocal temática (<i>salt-a-ría-n</i>), morfema de tiempo-modo-aspecto TMA (<i>-ría-</i>), morfema de persona-número PN (<i>-n</i>)
+</div>
+
+<h4>Formación de palabras (morfología léxica) <span class="src">LAT pp.124-125</span></h4>
+<ul>
+  <li>La morfología se divide en <b>flexiva</b> (variaciones con consecuencias gramaticales: concordancia, régimen preposicional; su conjunto es el <i>paradigma flexivo</i>) y <b>léxica o formación de palabras</b> (estructura de las palabras y cómo se crean; incluye derivación, composición y parasíntesis). <b>Familia de palabras / paradigma derivativo:</b> voces derivadas de una misma base <span class="ex">(alto → altura, alteza, altivo, enaltecer, altímetro…)</span>.</li>
+</ul>
+<div class="tw"><table>
+  <thead><tr><th>Procedimiento</th><th>Qué es</th><th>Ejemplos del libro</th></tr></thead>
+  <tbody>
+    <tr><td><b>Derivación</b></td><td>Añadir prefijos o sufijos derivativos (o flexivos) a la raíz. Dos formas: <b>prefijación</b> (se añade un prefijo) y <b>sufijación</b> (se añade un sufijo y puede cambiar la categoría).</td><td class="ex">resurgir; encubrir → encubrimiento; reasignar, librería, paellero</td></tr>
+    <tr><td><b>Composición</b></td><td>Combinar palabras (o elementos compositivos cultos del latín o griego). Los adverbios en <i>-mente</i> son compuestos.</td><td class="ex">aguamarina, agridulce, paraguas, hipódromo, fotografía, musicólogo; <b>sintagmáticos:</b> estrella de mar, casa cuartel, pez espada</td></tr>
+    <tr><td><b>Parasíntesis</b></td><td>Prefijo y sufijo añadidos <b>a la vez</b> a la raíz; <u>no existen</u> por separado «prefijo + raíz» ni «raíz + sufijo».</td><td class="ex">pordiosero, adelgazar</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><b>Truco para distinguir derivada de parasintética:</b> si existe la palabra con solo el prefijo o solo el sufijo, es derivada. <i>Submarino</i> es derivada porque existe <i>marino</i>; <i>anormal</i> también.</li>
+  <li><b>Elementos compositivos cultos:</b> raíces latinas o griegas (<i>agorafobia</i>, <i>hipodérmico</i>, <i>teología</i>).</li>
+  <li><b>Esquema 1 del libro</b> (<span class="src">LAT p.124</span>): unidad léxica → morfema / palabra (simple o compleja) / <b>locución</b> (sustantiva, verbal, adjetiva, adverbial, conjuntiva, preposicional, interjectiva). La palabra compleja puede ser derivada o compuesta; derivada por proceso (sufijación, prefijación, parasíntesis) y por categoría de la base (denominal <i>ocioso</i>, deadjetival <i>belleza</i>, deverbal <i>comedor</i>, deadverbial <i>alejar</i>).</li>
+</ul>
+
+<h4>Flexión <span class="src">LAT pp.126-128</span></h4>
+<ul>
+  <li><b>Flexión:</b> proceso por el que las palabras adoptan morfemas flexivos con contenido gramatical. <b>Nominal</b> (género, número y persona) y <b>verbal</b> (tiempo, modo, aspecto, número y persona).</li>
+  <li><b>Concordancia:</b> una palabra reproduce los morfemas flexivos de otra <span class="ex">(las casa-s blanca-s; nosotros llegamos)</span>.</li>
+  <li><b>Información flexiva</b> (lo que aporta: plural) frente a <b>marca flexiva</b> (el segmento: <i>-s</i>). <span class="ex">habl-<u>aban</u>: marca <i>-aban</i>, información: 3.ª persona plural, pretérito imperfecto, indicativo.</span></li>
+  <li><b>Desinencia verbal:</b> afijos flexivos del verbo (persona, número, tiempo, modo) más la <b>vocal temática</b> (<i>habl-a-mos</i>: a, 1.ª conjugación; <i>viv-i-ste</i>: i, 3.ª conjugación).</li>
+  <li><b>Morfema de caso:</b> expresa relaciones sintácticas con marcas flexivas; en español, en los pronombres personales: sujeto (<i>yo, él</i>), CD (<i>lo, la</i>), CI (<i>le, les</i>).</li>
+</ul>
+
+<div class="card">
+  <b>Modelo de análisis de una palabra</b> <span class="src">LAT p.125 · ejercicio E 2</span><br>
+  <b>desconocido</b> → raíz <i>conoc-</i> · prefijo <i>des-</i> (derivativo) · sufijo <i>-id-</i> (derivativo) · sufijo <i>-o</i> (flexivo) · significado: «que no se le conoce».<br>
+  Pasos: <b>a)</b> raíz · <b>b)</b> afijos · <b>c)</b> tipo de afijos · <b>d)</b> significado.
+</div>
+<div class="card">
+  <b>Ejercicios tipo del libro (E 1–E 10)</b> <span class="src">LAT pp.121-128</span>
+  <ul>
+    <li>Comparar dos palabras de la misma familia léxica y explicar el cambio de significado según el morfema derivativo (E 1, E 9: <i>petróleo / petrolero</i>).</li>
+    <li>Clasificar sustantivos (epiceno, heterónimo, pluralia tantum, gentilicio…) (E 1.1).</li>
+    <li>Analizar palabras (raíz, afijos, tipo, significado) (E 2); elegir las derivadas o las compuestas de una lista (E 3, E 4).</li>
+    <li>Decir si son derivación, composición o parasíntesis (E 5.1, E 6) y explicar el orden de inserción de los afijos (<i>desconfiadamente</i>) (E 5.2).</li>
+    <li>Completar el proceso de formación: <i>legal → ilegal → ilegalmente</i> = derivación por prefijación <b>y</b> composición (E 7).</li>
+    <li>Formar derivadas con sufijo de profesión (E 8) y distinguir cuándo un sufijo cambia la categoría gramatical: <i>feliz → felicidad</i> (E 10).</li>
+    <li>Cuaderno de actividades (CA): tema 9 (10, 15, 16), tema 10 (5, 7, 8, 11, 12), tema 11 (14, 17, 22, 24, 25).</li>
+  </ul>
+</div>
+
+<h3 id="gal">5.2 GAL-1 · Categorías gramaticales <span class="src">LAT pp.134-137</span></h3>
+<p class="noprint">¿Te cuesta? Hay una versión más sencilla, con trucos para reconocerlas y práctica con respuestas: <a href="castellano-categorias-gramaticales.html">castellano-categorias-gramaticales.html</a>.</p>
+<p>Regla de oro para distinguirlas: el <b>determinante</b> acompaña a un nombre; el <b>adjetivo</b> concuerda con un nombre; el <b>pronombre</b> sustituye a personas o cosas; el <b>adverbio</b> complementa a un verbo, adjetivo u otro adverbio (y es invariable).</p>
+
+<h4>Nombre</h4>
+<p>Concreto, abstracto, común, propio, contable, no contable, individual, colectivo, animado, inanimado.</p>
+
+<h4>Determinantes (complementan al nombre)</h4>
+<div class="tw"><table>
+  <thead><tr><th>Clase</th><th>Palabras</th></tr></thead>
+  <tbody>
+    <tr><td>Definidos (artículo)</td><td>el, la, los, las, lo. <b>Artículo contracto:</b> <i>del</i> (de + el), <i>al</i> (a + el)</td></tr>
+    <tr><td>Demostrativos</td><td>este, ese, aquel (y femenino/plural); mismo</td></tr>
+    <tr><td>Posesivos</td><td>mi, tu, su, nuestro, vuestro… <b>cuyo</b> (determinante relativo-posesivo)</td></tr>
+    <tr><td>Numerales</td><td>cardinales (uno, dos…) · ordinales (primero…) · múltiplos (doble, triple…) · partitivos (medio, tercio…)</td></tr>
+    <tr><td>Distributivos</td><td>ambos, sendos, cada, demás</td></tr>
+    <tr><td>Indefinidos</td><td>un, una, todo, mucho, poco, bastante, algún, ningún, más, menos, tanto, demasiado, cualquier, tal, cierto, otro, semejante, determinado… y <b>cuanto</b></td></tr>
+    <tr><td>Interrogativos-exclamativos</td><td>qué, cuál, cuánto</td></tr>
+  </tbody>
+</table></div>
+
+<h4>Adjetivos (concuerdan con un nombre)</h4>
+<div class="tw"><table>
+  <thead><tr><th>Clase</th><th>Rasgos</th><th>Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><b>Calificativos</b></td><td>Indican una cualidad; se pueden graduar; la mayoría puede ir antepuesta. <b>Especificativo</b>: restringe (<i>una corbata azul</i>, no roja ni blanca). <b>Explicativo o epíteto</b>: destaca una cualidad (<i>los olorosos nardos</i>).</td><td class="ex">grande, inteligente</td></tr>
+    <tr><td><b>Relacionales</b></td><td>Propiedades por relación con algo externo; <b>no</b> van delante del nombre ni se pueden graduar (*una química compañía).</td><td class="ex">producto lácteo, industria química, comida coreana</td></tr>
+    <tr><td><b>Adverbiales</b></td><td>Significado parecido al de un adverbio (tiempo, modo, frecuencia); suelen ir antepuestos.</td><td class="ex">el actual presidente, el supuesto fracaso, frecuente, constante</td></tr>
+    <tr><td><b>Determinativos</b></td><td>Cuantificación (numerosos, diversos) o referencia (otros, semejantes).</td><td class="ex">diversos alumnos</td></tr>
+  </tbody>
+</table></div>
+<p><b>Grados:</b> positivo (cielo azul), comparativo (más/menos azul que…), superlativo (muy azul / azulísimo).</p>
+
+<h4>Pronombres (sustituyen a personas o cosas)</h4>
+<ul>
+  <li><b>Personales átonos</b> (me, te, lo, los, la, las, le, les, se, nos, os): van ligados al verbo y forman con él una unidad acentual. Usos impropios: <b>laísmo</b> (*«la dijeron»), <b>loísmo</b> (*«lo di»); el <b>leísmo</b> se admite en algunos casos.</li>
+  <li><b>Personales tónicos:</b> yo, mí, sí, ti, conmigo, contigo, nosotros, vosotros, él, ella, ellos, ellas (tienen acento fónico aunque no lleven tilde).</li>
+  <li><b>Demostrativos</b> (este, ese, aquel), <b>posesivos</b> (mío, tuyo, suyo, nuestro, vuestro), <b>numerales</b> (uno, dos…), <b>indefinidos</b> (algo, nada, alguien, nadie, alguno, cualquiera, todo, mucho, poco, bastante, demasiado, más, menos, ninguno…).</li>
+  <li><b>Interrogativos / exclamativos:</b> qué, quién, cuál, cuánto.</li>
+  <li><b>Relativos:</b> que, quien, el cual, cuanto; se refieren a un elemento nombrado antes (el <b>antecedente</b>).</li>
+  <li><b>Recíproco</b> (<i>Martín y Alba se adoran</i>) y <b>reflexivo</b> (<i>Yo ya me lavé los dientes</i>).</li>
+  <li><b>Clítico:</b> palabra átona que se apoya en otra tónica. <b>Proclítico</b> (antes del verbo: <i>lo vi</i>) y <b>enclítico</b> (después: <i>llámelo</i>).</li>
+</ul>
+
+<h4>Adverbios (complementan a verbo, adjetivo o adverbio)</h4>
+<div class="tw"><table>
+  <thead><tr><th>Tipo</th><th>Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td>Lugar</td><td>aquí, allí, ahí, acá, allá, encima, dentro, debajo, fuera</td></tr>
+    <tr><td>Tiempo</td><td>ayer, hoy, mañana, ahora, entonces, ya, antes, después</td></tr>
+    <tr><td>Grado (como figura en el libro)</td><td>bien, mal, regular, adrede, despacio; locución: a ciegas</td></tr>
+    <tr><td>Cantidad</td><td>muy, apenas, menos, poco, mucho, bastante, demasiado</td></tr>
+    <tr><td>Afirmación · Negación · Duda</td><td>sí, ciertamente, también · no, nunca, jamás, tampoco · quizá(s), acaso, seguramente, tal vez</td></tr>
+    <tr><td>Relativo · Interrogativo-exclamativo</td><td>donde, cuando, como, cuanto · ¿dónde?, ¿cómo?, ¿cuándo?, ¿cuánto?</td></tr>
+    <tr><td>Demostrativo · Pronominal</td><td>de lugar, tiempo, cantidad y manera (aquí, hoy, así, tanto) · con propiedades de pronombre (aquí, allí, ayer, entonces, cuándo, dónde)</td></tr>
+    <tr><td>Adjetival</td><td>Coincide con la forma del adjetivo pero <b>no se flexiona</b>: <i>respira fuerte</i>, <i>hablar claro</i>, <i>trabaja duro</i></td></tr>
+    <tr><td>De manera</td><td>Suelen formarse con <i>-mente</i>: <i>fácilmente</i>; también <i>así</i>, <i>mejor</i></td></tr>
+    <tr><td>De foco</td><td>Destacan un segmento: incluso, solo, también, tampoco, apenas, casi, exclusivamente, concretamente</td></tr>
+    <tr><td>Oracional</td><td>Afectan a toda la oración, entre pausas: <i>Supuestamente, el incendio fue provocado</i></td></tr>
+  </tbody>
+</table></div>
+
+<h4>Conjunciones y preposiciones</h4>
+<div class="tw"><table>
+  <thead><tr><th>Conjunción</th><th>Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td colspan="2"><b>Coordinantes</b></td></tr>
+    <tr><td>Copulativa</td><td>y, e, ni</td></tr>
+    <tr><td>Adversativa</td><td>pero, mas, sin embargo, sino que…</td></tr>
+    <tr><td>Disyuntiva</td><td>o (u), o bien</td></tr>
+    <tr><td colspan="2"><b>Subordinantes</b></td></tr>
+    <tr><td>Sustantiva (completiva)</td><td>que, si</td></tr>
+    <tr><td>Temporal</td><td>cuando, antes que, después que…</td></tr>
+    <tr><td>Modal</td><td>como, según que…</td></tr>
+    <tr><td>Locativa</td><td>donde, dondequiera…</td></tr>
+    <tr><td>Causal</td><td>puesto que, ya que</td></tr>
+    <tr><td>Comparativa</td><td>como, así como, más… que, tal… como…</td></tr>
+    <tr><td>Consecutiva</td><td>tan… que</td></tr>
+    <tr><td>Ilativa</td><td>luego, con que, así que, por consiguiente…</td></tr>
+    <tr><td>Condicional · Concesiva · Final</td><td>si · aunque · para que</td></tr>
+  </tbody>
+</table></div>
+<p><b>Preposiciones:</b> a, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, so, sobre, tras, durante, mediante (el libro añade también <i>menos, salvo, incluso, excepto, vía, cabe, pro</i>).</p>
+<p><b>Locuciones:</b> combinaciones fijas de dos o más palabras con significado unitario que funcionan como una clase de palabra <span class="ex">(de repente, en torno a, a fin de que, de armas tomar)</span>. <b>Recategorización:</b> una palabra pasa a tener rasgos de otra categoría <span class="ex">(adverbialización: <i>hablar claro</i>; sustantivación: <i>el azul del mar</i>; adjetivación: <i>es muy niño</i>; nombres no contables → contables: <i>tres arroces</i>)</span>.</p>
+
+<div class="card">
+  <b>Cómo practicar: «Ejercicios mágicos de sintaxis I»</b> <span class="src">hoja de clase</span><br>
+  Es la hoja de ejercicios de este parcial (consulta el GAL-1). Tipos de ejercicio: identificar la clase de <b>determinantes</b> subrayados (ej. «este cuadro», «ambos fenómenos», «sendas bicicletas») · identificar la clase de <b>pronombres</b> · distinguir <b>adjetivo calificativo o adverbio</b> · distinguir <b>pronombre o adverbio</b> (<i>poco, menos, mucho</i>) · identificar la <b>categoría gramatical</b> de palabras subrayadas (incluidos adjetivos relacionales y adverbiales) · <b>subrayar preposiciones y conjunciones</b> en un texto.
+</div>
+
+<h3 id="verbos">5.3 Clases de verbos 1 <span class="src">LAT pp.137-138</span></h3>
+<div class="note warn">El documento remite al ppt <i>clases_verbos</i> (no lo tengo). Estas son las definiciones del GAL del libro.</div>
+<div class="tw"><table>
+  <thead><tr><th>Clase</th><th>Definición</th><th>Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><b>Copulativo</b></td><td>Contenido léxico escaso; une un sujeto con un <b>atributo</b>, que puede sustituirse por el pronombre neutro <i>lo</i>. Verbos: <b>ser, estar, parecer</b>.</td><td class="ex">Él es simpático; Ella está contenta; Juan parece cansado</td></tr>
+    <tr><td><b>Semicopulativo</b></td><td>Verbo predicativo que pierde parte de su significado y se complementa con un atributo: andar, seguir, volverse, resultar, mantenerse, quedarse, encontrarse, ponerse, hacerse…</td><td class="ex">Juan anda preocupado; Pedro se hace fuerte</td></tr>
+    <tr><td><b>Modal</b></td><td>Expresa probabilidad, posibilidad, capacidad, obligación, necesidad o permiso: <b>poder + verbo, deber + verbo, tener que + verbo</b>, ser + (preciso, necesario, posible…) que.</td><td class="ex">Puede que llegue tarde; Tiene que llamar antes</td></tr>
+    <tr><td><b>Predicativo</b></td><td>Tiene contenido léxico pleno y puede formar un predicado sin otras palabras.</td><td class="ex">Ella come un plátano; Pasea por la alameda; Él piensa</td></tr>
+    <tr><td><b>Transitivo</b></td><td>Puede o debe seleccionar un <b>complemento directo</b>.</td><td class="ex">Él lee un libro; Él tiene resistencia</td></tr>
+    <tr><td><b>Intransitivo</b></td><td>No selecciona complemento directo. Pueden ser <b>inacusativos</b> o <b>inergativos</b>.</td><td class="ex">Yo nací allí; Vosotros sonreís</td></tr>
+    <tr><td><b>Inacusativo</b></td><td>Intransitivo que indica <b>cambio de estado</b> cuyo sujeto <b>no es el causante</b> (sujeto paciente): nacer, morir, fallecer, enrojecer, surgir, existir, crecer, florecer, ocurrir, aparecer, desaparecer… <b>Admite</b> construcción de participio.</td><td class="ex">Ocurrió una desgracia; Juan ha crecido; <i>Llegado el paquete</i>, <i>Caído el telón</i></td></tr>
+    <tr><td><b>Inergativo</b></td><td>Intransitivo que expresa actividades o procesos que <b>dependen de la voluntad de un agente</b> (agentivos): sonreír, patinar, trabajar, gritar, caminar, bostezar, llorar… <b>No admite</b> construcción de participio.</td><td class="ex">Juan ha bostezado; Mi prima patina bastante bien</td></tr>
+    <tr><td><b>Pasiva perifrástica</b></td><td>Verbo formado por <b>ser + participio</b>, con sentido pasivo.</td><td class="ex">La escultura será tallada por ese artista; El árbol fue talado por el bombero</td></tr>
+    <tr><td><b>Impersonal</b></td><td>Solo formas de <b>3.ª persona del singular</b> y <b>sin sujeto</b> (expreso ni tácito). También la construcción <b>se + 3.ª singular sin sujeto</b> (se impersonal).</td><td class="ex">Ha habido numerosos incidentes; Llueve a cántaros; Se vive tranquilo aquí</td></tr>
+  </tbody>
+</table></div>
+<p><b>Truco para distinguir inacusativo e inergativo:</b> prueba la construcción de participio. <i>Llegado el paquete</i> ✔ (inacusativo); <i>*Bostezado Juan</i> ✘ (inergativo).</p>
+
+<h3 id="pm">5.4 Pares mínimos 10-23 y Análisis inverso 1-5</h3>
+<p class="ex">Los ejercicios y las respuestas de clase no se reproducen aquí: esto es el formato de las preguntas y lo que conviene saber para hacerlas.</p>
+
+<h4>Pares mínimos 10–23</h4>
+<div class="card"><b>Formato de la pregunta.</b> Dos secuencias casi idénticas. Te piden <b>indicar cuál es agramatical y explicar por qué</b>, o <b>explicar el contraste semántico</b>. La respuesta tiene un <b>máximo de 40-50 palabras</b> y debe contener <b>términos gramaticales relevantes</b> (a veces se limitan a 3 o 4).</div>
+<div class="note ok"><b>Ideas que se repiten (apréndetelas):</b>
+  <ul>
+    <li><b>«Haber» impersonal</b> solo en 3.ª singular: <i>hubo, había, ha habido</i>. Nunca <i>hubieron / habían</i>.</li>
+    <li><b>Adjetivos relacionales:</b> no se anteponen ni admiten grado.</li>
+    <li><b>Una misma palabra, categorías distintas:</b> <i>lo, esta, qué, que, cuando/cuándo, fácil/claro</i>.</li>
+    <li><b>Determinante</b> acompaña a un nombre; <b>pronombre</b> lo sustituye.</li>
+    <li><b>Adverbio adjetival:</b> igual que el adjetivo pero sin flexión (<i>hablar claro</i>).</li>
+    <li><b>Sendos</b> = distributivo; no vale si no hay varios poseedores.</li>
+  </ul>
+</div>
+
+<h4>Análisis inverso 1–5</h4>
+<div class="card"><b>Formato.</b> Te dan tres elementos gramaticales. Escribes una <b>secuencia gramatical y con sentido de no más de 20 palabras</b> que los contenga <b>en el orden que quieras</b>; puede haber subordinadas, pero <b>no oraciones coordinadas ni yuxtapuestas</b>. Después <b>copias en un cuadro</b> la palabra o grupo que corresponde a cada elemento.</div>
+<div class="note warn"><b>Método para hacerlos rápido</b> (mío, orientativo):
+  <ol>
+    <li>Empieza por el <b>verbo</b>: es el elemento más restrictivo (modal = <i>poder/deber/tener que</i> + infinitivo; pasiva perifrástica = <i>ser</i> + participio; pronominal = <i>arrepentirse, quejarse, calmarse</i>; inacusativo = <i>nacer, crecer, caer, aparecer</i>).</li>
+    <li>Añade el <b>pronombre o determinante</b>: interrogativo (<i>qué, quién, cuál, cuánto</i>), relativo (<i>que, quien, el cual</i>), átono (<i>me, te, le, se, nos</i>).</li>
+    <li>Cierra con el <b>nombre o adjetivo</b> que pidan (contable, abstracto, calificativo).</li>
+    <li><b>Cuenta</b> que no pasas de 20 palabras y que <b>no hay dos oraciones seguidas</b> (nada de «y», «o» entre oraciones ni comas que las unan).</li>
+    <li>Copia en el cuadro las palabras <b>exactas</b> de tu frase, no sinónimos.</li>
+  </ol>
+</div>
+
+<h3 id="gramsig">5.5 ppt «Gramática y significado (introducción)»</h3>
+<div class="note bad">No tengo la presentación. Repasa tus apuntes de esa clase.</div>
+
+<!-- ===================================================== -->
+<h2 id="escrita">6. Expresión escrita · Guía para aprender a argumentar <span class="src">LAT pp.37-47</span></h2>
+<p>Para el parcial: <b>escribir una breve argumentación</b>.</p>
+
+<h4>Qué es argumentar</h4>
+<ul>
+  <li><b>Argumentar</b> es defender una <b>tesis</b> (también llamada conclusión) con <b>premisas</b>. Una premisa es una afirmación que sirve de base para defender o justificar la conclusión.</li>
+  <li>Hay que saber <b>distinguir la tesis de sus premisas</b>.</li>
+</ul>
+
+<h4>Estructura (tres o cuatro párrafos)</h4>
+<div class="cols">
+  <div class="card"><b>Esquema A (4 párrafos)</b><ol>
+    <li>Párrafo inicial persuasivo, con la <b>tesis al final</b></li>
+    <li>Premisa 1 a favor de la tesis</li>
+    <li>Premisa 2 a favor de la tesis</li>
+    <li>Contraargumento («Es verdad que… pero…»)</li></ol></div>
+  <div class="card"><b>Esquema B (3 párrafos)</b><ol>
+    <li>Párrafo inicial persuasivo, con la <b>tesis al final</b></li>
+    <li>Premisa 1 a favor de la tesis</li>
+    <li>Contraargumento (premisa en contra y premisa a favor: «Es verdad que… pero…»)</li></ol></div>
+</div>
+
+<h4>El párrafo inicial persuasivo (exordio)</h4>
+<ul>
+  <li>En retórica, el <b>exordio</b> es el inicio persuasivo que presenta de qué trata el texto. Termina con la <b>tesis</b>.</li>
+  <li><b>Formas adecuadas:</b> una <b>cita</b>, una <b>experiencia</b> o breve historia, un <b>ejemplo</b>, una serie de <b>preguntas</b>.</li>
+  <li><b>Inicios pésimos (evítalos):</b> «Actualmente, no cabe duda de que…», «Hoy en día, la gente…», «En la sociedad actual…», «Como todo el mundo sabe…», «Dentro de 30 años la tecnología habrá avanzado mucho…».</li>
+</ul>
+
+<h4>Tipos de premisas <span class="src">LAT pp.43-44</span></h4>
+<ol>
+  <li><b>Regla general:</b> creencia compartida por la comunidad.</li>
+  <li><b>Premisa de experiencia:</b> una vivencia personal que apoya la tesis.</li>
+  <li><b>Cita</b> de una autoridad.</li>
+  <li><b>Ejemplo</b> concreto (datos, casos).</li>
+  <li><b>Figuras retóricas</b> (metáfora, etc.).</li>
+</ol>
+
+<h4>Contraargumento <span class="src">LAT p.44</span></h4>
+<ul>
+  <li>Introducir una premisa <b>opuesta</b> a tu tesis para refutarla con otra; prever las réplicas y rebatirlas antes. Refuerza tu tesis.</li>
+  <li><b>Por refutación:</b> se confirma la tesis propia. <b>Por concesión:</b> se admite la tesis contraria.</li>
+  <li><span class="ex">Modelo: «Es verdad que la cara oscura de las redes consiste en… Pero me pregunto si acaso vamos a olvidar que las mismas situaciones se pueden dar en la llamada vida real.»</span></li>
+</ul>
+
+<h4>Conectores <span class="src">LAT pp.41-43</span></h4>
+<p><b>Qué son:</b> palabras o expresiones que enlazan oraciones y párrafos y orientan al lector («señales de tráfico»). Son <b>invariables</b>, no tienen función sintáctica dentro de la oración (la tienen en el texto), indican relaciones (causa, consecuencia, contraste, adición…), suelen ir <b>entre comas</b> y dan unidad y coherencia.</p>
+<div class="tw"><table>
+  <thead><tr><th>Tipo</th><th>Subtipo</th><th>Conectores</th></tr></thead>
+  <tbody>
+    <tr><td rowspan="4"><b>Contraargumentativos</b><br>(el texto cambia de orientación)</td><td>Introducen argumentos débiles</td><td>aunque, si bien, a pesar de (que), pese a (que)</td></tr>
+    <tr><td>Introducen argumentos fuertes</td><td>pero, no obstante, sin embargo, con todo, ahora bien, aun así, de todas formas, mas, de todos modos</td></tr>
+    <tr><td>Contrastivos</td><td>mientras que, en tanto que, sino que, en cambio, por el contrario, antes bien</td></tr>
+    <tr><td>Canceladores</td><td>de cualquier manera, en cualquier caso</td></tr>
+    <tr><td rowspan="2"><b>Aditivos</b></td><td>Igual fuerza argumentativa</td><td>y, asimismo, igualmente, del mismo modo, también, por su parte, a su vez, por otra parte, por otro lado</td></tr>
+    <tr><td>Mayor fuerza argumentativa</td><td>además, por si fuera poco, es más, incluso, más aún, encima</td></tr>
+    <tr><td rowspan="2"><b>Operadores</b></td><td>De refuerzo argumentativo</td><td>de hecho, en realidad</td></tr>
+    <tr><td>De debilitamiento argumentativo</td><td>en principio, en teoría</td></tr>
+    <tr><td rowspan="2"><b>Reformuladores</b></td><td>Para explicar</td><td>es decir, esto es, mejor dicho, a saber, en otros términos</td></tr>
+    <tr><td>No explicativos</td><td><b>Recapitulación:</b> en suma, en resumen, en conclusión, en síntesis, en pocas palabras · <b>Rectificación:</b> más bien, mejor dicho · <b>Nuevo punto de vista:</b> en definitiva · <b>Invalidación:</b> de todas formas/maneras/modos, en cualquier caso, en todo caso</td></tr>
+    <tr><td><b>Digresores</b></td><td>Introducen un comentario lateral</td><td>a propósito de…, dicho sea de paso, por cierto, a todo esto</td></tr>
+  </tbody>
+</table></div>
+<p class="ex">Otros usados en los ejemplos del libro: por tanto, por ello, en cambio, a su vez.</p>
+
+<h4>Falacias (sofismas) <span class="src">LAT pp.44-46</span></h4>
+<div class="tw"><table>
+  <thead><tr><th>Falacia</th><th>En qué consiste</th></tr></thead>
+  <tbody>
+    <tr><td><b><i>Post hoc, ergo propter hoc</i></b></td><td>Confundir una sucesión temporal con un vínculo causal.</td></tr>
+    <tr><td><b>Petición de principio</b></td><td>Partir de las premisas que se han de probar, con otras palabras.</td></tr>
+    <tr><td><b><i>Ad hominem</i></b></td><td>Descalificar a quien habla en lugar de rebatir su argumento («es un ignorante»).</td></tr>
+    <tr><td><b><i>Ad nauseam</i></b></td><td>Pretender que algo es cierto por repetirlo constantemente.</td></tr>
+    <tr><td><b><i>Ad ignorantiam</i></b></td><td>Decir que algo es verdad solo porque no se ha demostrado que sea falso.</td></tr>
+    <tr><td><b><i>Ad misericordiam</i></b></td><td>Apelar a la piedad para obtener un trato especial.</td></tr>
+    <tr><td><b><i>Ad populum</i></b></td><td>Apelar a las emociones de la multitud («todo el mundo lo hace»).</td></tr>
+    <tr><td><b>Descalificar la fuente</b></td><td>Usar lenguaje emotivo para menospreciar un argumento antes de mencionarlo («ninguna persona razonable piensa que…»).</td></tr>
+    <tr><td><b>Falso dilema</b></td><td>Reducir las opciones a dos, drásticamente opuestas.</td></tr>
+    <tr><td><b><i>Ad baculum</i></b></td><td>Apelar a la fuerza o al temor («lo tienes que hacer porque lo digo yo»).</td></tr>
+    <tr><td><b><i>Ad verecundiam</i></b></td><td>Apoyar un argumento solo en el prestigio de una persona o institución («lo han dicho en el telediario»).</td></tr>
+  </tbody>
+</table></div>
+
+<div class="card">
+  <b>Plantilla rápida para tu argumentación breve</b> (basada en los esquemas del libro)
+  <ol>
+    <li><b>Exordio</b> (3-4 frases): cita, experiencia, ejemplo o pregunta → tesis clara al final.</li>
+    <li><b>Premisa 1</b>: elige un tipo (regla general, experiencia, cita, ejemplo) y conéctala: <i>en primer lugar, por una parte…</i></li>
+    <li><b>Premisa 2</b>: otro tipo distinto: <i>además, a su vez, por otra parte…</i></li>
+    <li><b>Contraargumento</b>: <i>Es verdad que… pero…</i> (refutación o concesión).</li>
+    <li><b>Cierre</b> con un conector de conclusión (<i>en definitiva, en conclusión</i>) si tienes espacio.</li>
+  </ol>
+  <span class="ex">Comprueba que ninguna premisa sea una falacia. La extensión concreta y si hay que subrayar la tesis te la dirá el enunciado: el libro solo da «breve» para este parcial.</span>
+</div>
+
+<div class="note warn"><b>«Cómo escribir bien» (apuntes de una presentación)</b> está en tus apuntes de clase y no lo he podido ver.</div>
+
+<!-- ===================================================== -->
+<h2 id="antes">7. Antes de entregar (para no regalar décimas)</h2>
+<p>Recuerda: <b>−0,1 por cada error, sin límite, y los repetidos cuentan</b>.</p>
+<ul>
+  <li><label class="chk"><input type="checkbox" data-c="a1"><span><b>Tildes:</b> repasa las palabras agudas, llanas y esdrújulas, los hiatos y la tilde diacrítica (<i>tú/tu, él/el, qué/que, sí/si, más/mas</i>).</span></label></li>
+  <li><label class="chk"><input type="checkbox" data-c="a2"><span><b>Puntuación:</b> comas en incisos, enumeraciones, vocativos e interjecciones y ante los conectores de contraste; punto y coma si los elementos ya llevan comas.</span></label></li>
+  <li><label class="chk"><input type="checkbox" data-c="a3"><span><b>Concordancia:</b> género y número entre nombre y adjetivo, sujeto y verbo.</span></label></li>
+  <li><label class="chk"><input type="checkbox" data-c="a4"><span><b>Léxico:</b> evita repeticiones y muletillas; no uses palabras cuyo significado dudes.</span></label></li>
+  <li><label class="chk"><input type="checkbox" data-c="a5"><span><b>Relectura:</b> reserva 5 minutos al final y lee el escrito en voz baja, frase por frase.</span></label></li>
+</ul>
+
+<!-- ===================================================== -->
+<h2 id="plan">8. Plan de repaso para esta noche (≈ 4 h)</h2>
+<p class="ex">Sugerencia mía para repartir el tiempo; ajústala a lo que ya domines. Empieza por lo que más puntúa y cuesta: la gramática.</p>
+<div class="tw"><table>
+  <thead><tr><th>Bloque</th><th>Tiempo</th><th>Qué hacer</th></tr></thead>
+  <tbody>
+    <tr><td>1. Morfología (§5.1)</td><td>40 min</td><td>Aprende el esquema de morfemas y los tres procedimientos; analiza 8 palabras en voz alta (raíz, afijos, tipo, significado).</td></tr>
+    <tr><td>2. Categorías gramaticales (§5.2)</td><td>45 min</td><td>Repasa los cuadros y haz 2-3 ejercicios de la hoja «mágica» sin mirar las soluciones.</td></tr>
+    <tr><td>3. Clases de verbos (§5.3)</td><td>30 min</td><td>Un ejemplo propio por cada una de las 10 clases.</td></tr>
+    <tr><td>4. Pares mínimos y Análisis inverso (§5.4)</td><td>35 min</td><td>Rehaz tus pares mínimos 10-23 y escribe 2 análisis inversos propios siguiendo el método.</td></tr>
+    <tr><td>5. Conceptos literarios (§4.1)</td><td>40 min</td><td>Tabla de narradores, estilos, tiempo (analepsis/prolepsis/elipsis) y términos teatrales.</td></tr>
+    <tr><td>6. Figuras retóricas I (§4.3)</td><td>25 min</td><td>Tapa la columna de definiciones y di la figura a partir del ejemplo.</td></tr>
+    <tr><td>7. Argumentación (§6)</td><td>30 min</td><td>Escribe una argumentación breve con la plantilla y subraya tesis y conectores.</td></tr>
+    <tr><td>8. Repaso rápido</td><td>15 min</td><td>Mira tus «confusiones típicas» y duerme.</td></tr>
+  </tbody>
+</table></div>
+
+<!-- ===================================================== -->
+<h2 id="falta">9. Lo que no he podido ver (revísalo tú)</h2>
+<ul>
+  <li><span class="tag warn">ojo</span> <b>Ejercicios de clase</b> (pares mínimos y análisis inverso): aquí solo están el formato y el método; rehaz los tuyos con las correcciones de tu profesor.</li>
+  <li><span class="tag bad">falta</span> <b>Novela <i>Disidente y perseguido</i></b> (pp. 83-183).</li>
+  <li><span class="tag bad">falta</span> Presentaciones y dosieres de clase: <i>clases_verbos</i> (ppt), <i>Gramática y significado</i> (ppt), <i>Figuras retóricas 1</i> (dosier), <i>GAL-1</i> (fotocopia), <i>Cómo escribir bien</i>.</li>
+  <li><span class="tag warn">ojo</span> <b>El texto de comprensión lectora</b> y las preguntas concretas del examen no se conocen hasta el examen.</li>
+  <li><span class="tag warn">ojo</span> Dos tablas del libro (conectores, <span class="src">LAT pp.42-43</span>) y los esquemas de morfología (<span class="src">LAT pp.123-124</span>) son imágenes; las he transcrito a mano y conviene que las compares con tu libro.</li>
+</ul>
+
+</div>
+
+<script>
+(function () {
+  var KEY = "castellano-p2-checks", saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+  // En la tabla del mapa, cada celda con data-c recibe una casilla delante
+  document.querySelectorAll("td[data-c]").forEach(function (td) {
+    var k = td.getAttribute("data-c");
+    var label = document.createElement("label"); label.className = "chk";
+    var box = document.createElement("input"); box.type = "checkbox"; box.setAttribute("data-c", k);
+    var span = document.createElement("span");
+    while (td.firstChild) span.appendChild(td.firstChild);
+    label.appendChild(box); label.appendChild(span); td.appendChild(label);
+  });
+  document.querySelectorAll("input[type=checkbox][data-c]").forEach(function (box) {
+    var k = box.getAttribute("data-c");
+    box.checked = !!saved[k];
+    function paint() { var l = box.closest(".chk"); if (l) l.classList.toggle("done", box.checked); }
+    paint();
+    box.addEventListener("change", function () {
+      saved[k] = box.checked; paint();
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>

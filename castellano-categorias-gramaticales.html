@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Castellano · Categorías gramaticales fáciles</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --surface: #ffffff; --surface-2: #eef0f4; --text: #1b2230; --muted: #5d6779; --border: #dde1e8;
+    --accent: #e0457b; --link: #2f6fde;
+    --ok-bg: #dff3e6; --ok-fg: #14612f; --warn-bg: #fdf0cf; --warn-fg: #7a5200; --bad-bg: #fbdcdc; --bad-fg: #8f1d1d;
+    --c-nom: #2f6fde; --c-det: #8b5cf6; --c-adj: #12a37f; --c-pro: #e8a317; --c-adv: #db2777; --c-con: #0e7490; --c-pre: #c2410c;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f131a; --surface: #171c26; --surface-2: #202737; --text: #e8ecf3; --muted: #9aa5b8; --border: #2a3345;
+      --accent: #ff7aa8; --link: #6b9bff;
+      --ok-bg: #173a27; --ok-fg: #8fe0ae; --warn-bg: #3d3112; --warn-fg: #f2d27a; --bad-bg: #432020; --bad-fg: #ffa3a3;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 4px; letter-spacing: -.02em; }
+  h2 { font-size: 1.25rem; margin: 36px 0 10px; padding: 8px 12px; border-radius: 10px; color: #fff; background: var(--c, var(--accent)); }
+  h3 { font-size: 1.05rem; margin: 20px 0 8px; }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+  a { color: var(--link); }
+  .sub { color: var(--muted); margin: 0 0 18px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 18px; margin: 12px 0; }
+  .note { border-radius: 12px; padding: 12px 16px; margin: 12px 0; }
+  .note.warn { background: var(--warn-bg); color: var(--warn-fg); }
+  .note.ok { background: var(--ok-bg); color: var(--ok-fg); }
+  .note.bad { background: var(--bad-bg); color: var(--bad-fg); }
+  .tip { border-left: 5px solid var(--accent); background: var(--surface); border-radius: 0 12px 12px 0; padding: 8px 14px; margin: 10px 0; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .tip b.t { color: var(--accent); text-transform: uppercase; font-size: .75rem; letter-spacing: .06em; display: block; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: .93rem; }
+  th, td { border: 1px solid var(--border); padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--surface-2); font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
+  .tw { overflow-x: auto; }
+  .ex { color: var(--muted); font-style: italic; }
+  .src { display: inline-block; font-size: .72rem; font-weight: 800; padding: 1px 7px; border-radius: 6px; background: var(--surface-2); color: var(--muted); white-space: nowrap; }
+  .pill { display: inline-block; font-size: .78rem; font-weight: 800; padding: 1px 9px; border-radius: 12px; color: #fff; }
+  .nom { background: var(--c-nom); } .det { background: var(--c-det); } .adj { background: var(--c-adj); } .pro { background: var(--c-pro); }
+  .adv { background: var(--c-adv); } .con { background: var(--c-con); } .pre { background: var(--c-pre); }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+  .toc { columns: 2 240px; margin: 8px 0 0; padding-left: 18px; }
+  .toc a { text-decoration: none; }
+  mark { background: var(--warn-bg); color: var(--warn-fg); padding: 0 4px; border-radius: 4px; font-weight: 700; }
+  details { margin: 6px 0; }
+  summary { cursor: pointer; font-weight: 700; color: var(--link); }
+  .flow li { margin: 8px 0; }
+  .go { font-weight: 800; }
+  @media print {
+    :root { --bg: #fff; --surface: #fff; --surface-2: #f0f0f0; --text: #000; --muted: #333; --border: #999; }
+    body { font-size: 10.5pt; } .wrap { max-width: none; padding: 0; }
+    h2 { break-after: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    table, .card, .tip, .note { break-inside: avoid; } .noprint { display: none; }
+    details[open] summary { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Categorías gramaticales explicadas fácil</h1>
+<p class="sub">Castellano 1.º Bach · Parcial 2 · GAL-1 <span class="src">LAT pp.134-137</span>. Lo que cae es: <b>nombre, determinante, adjetivo, pronombre, adverbio, conjunción y preposición</b>. Aquí está lo mismo que en el libro, pero con trucos para reconocerlas.</p>
+
+<div class="note warn">Las <b>clases y listas de palabras</b> son las del libro. Los <b>«trucos»</b> y las frases de práctica son <b>míos</b> para ayudarte a entenderlo: no son del profesor, así que si algo choca con lo que él explica en clase, vale lo suyo.</div>
+
+<div class="card noprint"><b>Índice</b>
+  <ol class="toc">
+    <li><a href="#resumen">Resumen en un minuto</a></li>
+    <li><a href="#como">Cómo reconocer cada palabra (paso a paso)</a></li>
+    <li><a href="#nombre">Nombre</a></li>
+    <li><a href="#determinante">Determinante</a></li>
+    <li><a href="#adjetivo">Adjetivo</a></li>
+    <li><a href="#pronombre">Pronombre</a></li>
+    <li><a href="#adverbio">Adverbio</a></li>
+    <li><a href="#conjuncion">Conjunción</a></li>
+    <li><a href="#preposicion">Preposición</a></li>
+    <li><a href="#mismas">Misma palabra, distinta categoría</a></li>
+    <li><a href="#practica">Practica (con respuestas)</a></li>
+  </ol>
+</div>
+
+<!-- ===================================================== -->
+<h2 id="resumen" style="--c:#475569">1. Resumen en un minuto</h2>
+<div class="tw"><table>
+  <thead><tr><th>Categoría</th><th>¿Qué hace?</th><th>¿Cambia de forma?</th><th>Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><span class="pill nom">Nombre</span></td><td>Nombra personas, animales, cosas, lugares o ideas.</td><td>Sí (género y número)</td><td class="ex">niño, ciudad, <b>honestidad</b></td></tr>
+    <tr><td><span class="pill det">Determinante</span></td><td><b>Acompaña al nombre</b> y lo concreta: lo presenta, lo señala, dice de quién es o cuántos hay.</td><td>Sí (casi todos)</td><td class="ex"><b>el</b> libro, <b>este</b> libro, <b>mi</b> libro, <b>tres</b> libros</td></tr>
+    <tr><td><span class="pill adj">Adjetivo</span></td><td><b>Acompaña al nombre</b> y dice <b>cómo es</b> (o lo clasifica).</td><td>Sí (concuerda con el nombre)</td><td class="ex">libro <b>interesante</b>, comida <b>coreana</b></td></tr>
+    <tr><td><span class="pill pro">Pronombre</span></td><td><b>Sustituye a un nombre</b> (o a una persona/cosa) y va solo.</td><td>Sí (casi todos)</td><td class="ex"><b>Ella</b> llegó; <b>esto</b> no me gusta; <b>me</b> lo dio</td></tr>
+    <tr><td><span class="pill adv">Adverbio</span></td><td>Modifica a un <b>verbo</b>, a un <b>adjetivo</b> o a otro <b>adverbio</b> (lugar, tiempo, modo, cantidad…).</td><td><b>No</b></td><td class="ex">vive <b>aquí</b>, <b>muy</b> alto, habla <b>bien</b></td></tr>
+    <tr><td><span class="pill con">Conjunción</span></td><td><b>Une</b> palabras, grupos u oraciones.</td><td><b>No</b></td><td class="ex">pan <b>y</b> vino; dice <b>que</b> vendrá</td></tr>
+    <tr><td><span class="pill pre">Preposición</span></td><td><b>Introduce</b> un complemento y lo relaciona con lo anterior.</td><td><b>No</b></td><td class="ex">casa <b>de</b> campo, voy <b>a</b> Madrid</td></tr>
+  </tbody>
+</table></div>
+<div class="note ok"><b>Para acordarte:</b>
+  <ul>
+    <li><b>Variables</b> (cambian): nombre, determinante, adjetivo, pronombre.</li>
+    <li><b>Invariables</b> (no cambian nunca): adverbio, conjunción, preposición.</li>
+    <li><b>Acompañan al nombre:</b> determinante y adjetivo. <b>Lo sustituye:</b> pronombre.</li>
+    <li><b>Nexos</b> (unen): conjunción y preposición.</li>
+  </ul>
+</div>
+
+<!-- ===================================================== -->
+<h2 id="como" style="--c:#475569">2. Cómo reconocer cada palabra (paso a paso)</h2>
+<p>Coge la palabra subrayada y contesta en este orden. Para en la primera pregunta que sea «sí».</p>
+<div class="card"><ol class="flow">
+  <li><b>¿Nombra algo</b> (una persona, un animal, una cosa, un lugar o una idea) y puede llevar <i>el / la</i> delante? → <span class="pill nom">nombre</span></li>
+  <li><b>¿Va dentro del grupo de un nombre</b> (<i>mis amigos, un coche rojo</i>) y concuerda con él?
+    <ul>
+      <li>Dice <b>cómo es</b> (cualidad) o <b>de qué tipo es</b> → <span class="pill adj">adjetivo</span></li>
+      <li>Lo <b>presenta, señala, indica de quién es o cuántos hay</b> → <span class="pill det">determinante</span></li>
+    </ul></li>
+  <li><b>¿Va sola, en lugar de un nombre</b> (puedes preguntarte «¿qué nombre sustituye?») → <span class="pill pro">pronombre</span></li>
+  <li><b>¿Es invariable y modifica</b> a un verbo, un adjetivo u otro adverbio (cómo, cuándo, dónde, cuánto, sí/no/quizá)? → <span class="pill adv">adverbio</span></li>
+  <li><b>¿Va delante de un nombre, pronombre u oración</b> y lo «engancha» con lo anterior (<i>a, de, en, con, por, para…</i>)? → <span class="pill pre">preposición</span></li>
+  <li><b>¿Une dos palabras, grupos u oraciones</b> sin tener función dentro de ellas (<i>y, o, pero, que, si, aunque…</i>)? → <span class="pill con">conjunción</span></li>
+</ol></div>
+<div class="tip"><b class="t">Ojo</b>Una misma palabra puede ser de varias categorías según la frase (<i>este, que, mucho, claro…</i>). <b>Se analiza la palabra dentro de su frase</b>, nunca sola. Mira el apartado <a href="#mismas">«Misma palabra, distinta categoría»</a>.</div>
+<div class="tip"><b class="t">Locuciones</b>Hay combinaciones fijas de varias palabras que funcionan como una sola categoría: <i>a salvo</i> (adverbial), <i>de repente</i> (adverbial), <i>en torno a</i> (preposicional), <i>puesto que</i> (conjuntiva), <i>a fin de que</i> (conjuntiva), <i>tomar el pelo</i> (verbal). Se analizan juntas.</div>
+
+<!-- ===================================================== -->
+<h2 id="nombre" style="--c:var(--c-nom)">3. Nombre (sustantivo)</h2>
+<p>Nombra personas, animales, cosas, lugares o ideas. Es el <b>núcleo</b> del grupo al que acompañan determinantes y adjetivos.</p>
+<div class="tw"><table>
+  <thead><tr><th>Clasificación</th><th>Clases</th><th>Cómo distinguirlas</th><th>Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><b>Común / propio</b></td><td>Común: nombra a cualquier ser de una clase. Propio: nombra a uno concreto.</td><td>El propio va con mayúscula.</td><td class="ex">ciudad / Zaragoza</td></tr>
+    <tr><td><b>Concreto / abstracto</b></td><td>Concreto: se percibe con los sentidos. Abstracto: ideas, sentimientos, cualidades.</td><td>¿Lo puedo ver o tocar? Si no → abstracto.</td><td class="ex">mesa / <b>honestidad</b>, felicidad</td></tr>
+    <tr><td><b>Contable / no contable</b></td><td>Contable: se puede contar. No contable: no.</td><td>¿Digo «tres ___»? Si suena bien → contable.</td><td class="ex">tres libros / agua, arroz</td></tr>
+    <tr><td><b>Individual / colectivo</b></td><td>Individual: designa un solo ser. Colectivo: en singular designa un <b>grupo</b>.</td><td>¿Es una sola palabra en singular que significa «muchos»?</td><td class="ex">soldado / <b>coro</b>, multitud, rebaño</td></tr>
+    <tr><td><b>Animado / inanimado</b></td><td>Animado: ser vivo. Inanimado: cosa.</td><td>—</td><td class="ex">perro / piedra</td></tr>
+  </tbody>
+</table></div>
+<h3>Cosas especiales del nombre <span class="src">LAT pp.121-122</span></h3>
+<ul>
+  <li><b>Género:</b> <b>común</b> (el/la astronauta), <b>epiceno</b> (un género para los dos sexos: la víctima, la pantera), <b>heterónimo</b> (palabras distintas: caballo/yegua), <b>ambiguo</b> (el mar / la mar).</li>
+  <li><b>Número:</b> <b>singularia tantum</b> (solo singular: sed, salud, oeste) y <b>pluralia tantum</b> (solo plural: natillas, víveres, tirantes).</li>
+  <li><b>Gentilicio:</b> dice de dónde es alguien (brasileño, asturiano).</li>
+  <li><b>Recategorización:</b> un no contable se vuelve contable al cambiar de sentido: <i>tres arroces</i> = tres platos de arroz.</li>
+</ul>
+
+<!-- ===================================================== -->
+<h2 id="determinante" style="--c:var(--c-det)">4. Determinante</h2>
+<p><b>Siempre acompaña a un nombre</b> (aparece antes de él, dentro del mismo grupo) y concuerda con él. Sirve para <b>concretar</b>: dice cuál, de quién o cuántos.</p>
+<div class="tw"><table>
+  <thead><tr><th>Clase</th><th>Qué indica</th><th>Palabras</th><th>Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><b>Artículo</b> (definido)</td><td>Presenta un nombre conocido</td><td>el, la, los, las, <b>lo</b></td><td class="ex"><b>la</b> casa; <b>lo</b> bonito</td></tr>
+    <tr><td><b>Artículo contracto</b></td><td>Preposición + artículo en una sola palabra</td><td><b>al</b> (a + el), <b>del</b> (de + el)</td><td class="ex">vengo <b>del</b> cole</td></tr>
+    <tr><td><b>Demostrativo</b></td><td>Señala cerca/lejos</td><td>este, ese, aquel (y sus femeninos y plurales); <b>mismo</b></td><td class="ex"><b>este</b> cuadro; el <b>mismo</b> autobús</td></tr>
+    <tr><td><b>Posesivo</b></td><td>Dice de quién es</td><td>mi, tu, su, nuestro, vuestro (y f./pl.). <b>cuyo</b> = relativo-posesivo</td><td class="ex"><b>mis</b> amigos; la montaña <b>cuya</b> tradición…</td></tr>
+    <tr><td><b>Numeral</b></td><td>Cantidad u orden</td><td><b>cardinal</b> (un, dos, tres…) · <b>ordinal</b> (primero, segundo…) · <b>múltiplo</b> (doble, triple…) · <b>partitivo</b> (medio, tercio…)</td><td class="ex"><b>doscientos</b> soldados; <b>doble</b> ración; un <b>cuarto</b> piso</td></tr>
+    <tr><td><b>Distributivo</b></td><td>Reparte o toma uno a uno</td><td><b>ambos, sendos, cada, demás</b></td><td class="ex"><b>cada</b> alumno; <b>sendas</b> bicicletas</td></tr>
+    <tr><td><b>Indefinido</b></td><td>Cantidad o identidad imprecisa</td><td>un/una/unos/unas, todo, mucho, poco, bastante, algún, ningún, más, menos, tanto, demasiado, cualquier, tal, cierto, otro, semejante, determinado, <b>cuanto</b></td><td class="ex"><b>ningún</b> vestigio; <b>otros</b> críos</td></tr>
+    <tr><td><b>Interrogativo-exclamativo</b></td><td>Pregunta o exclama sobre el nombre</td><td>qué, cuál, cuánto (con tilde)</td><td class="ex">¿<b>Qué</b> libro?; ¡<b>Qué</b> alegría!; ¿<b>Cuántos</b> pasteles?</td></tr>
+  </tbody>
+</table></div>
+<div class="tip"><b class="t">Truco</b>Si puedes poner un nombre justo detrás y la palabra «pide» ese nombre, es determinante: <i>este</i> <u>libro</u>, <i>mis</i> <u>amigos</u>, <i>tres</i> <u>perros</u>.</div>
+<div class="tip"><b class="t">Ojo: sendos</b>«Sendos» no significa «muchos»: significa «uno cada uno». <i>Llegaron en sendas bicicletas</i> = cada uno en la suya. Por eso <i>*malherido de sendos garrotazos</i> (una sola persona) es incorrecto: va «varios».</div>
+<div class="tip"><b class="t">Ojo: su / suyo</b><i>mi, tu, su</i> delante del nombre = determinante posesivo. <i>mío, tuyo, suyo</i> sin nombre = pronombre posesivo (<i>el mío</i>).</div>
+
+<!-- ===================================================== -->
+<h2 id="adjetivo" style="--c:var(--c-adj)">5. Adjetivo</h2>
+<p><b>Acompaña al nombre</b> y <b>concuerda</b> con él en género y número. Dice cómo es o de qué tipo es.</p>
+<div class="tw"><table>
+  <thead><tr><th>Clase</th><th>Qué es</th><th>Pistas para reconocerlo</th><th>Ejemplos</th></tr></thead>
+  <tbody>
+    <tr><td><b>Calificativo</b></td><td>Indica una <b>cualidad</b>.</td><td>Se puede graduar (<i>muy grande</i>) y casi siempre puede ir antes del nombre (<i>un inteligente muchacho</i>).</td><td class="ex">grande, inteligente, azul</td></tr>
+    <tr><td style="padding-left:24px">· <b>especificativo</b></td><td>Distingue un objeto de otros.</td><td>Quita el adjetivo y la frase cambia de sentido.</td><td class="ex">una corbata <b>azul</b> (no roja ni blanca)</td></tr>
+    <tr><td style="padding-left:24px">· <b>explicativo</b> (epíteto)</td><td>Destaca una cualidad que ya se sabe.</td><td>Suele ir antes del nombre y no hace falta para entender.</td><td class="ex">los <b>olorosos</b> nardos</td></tr>
+    <tr><td><b>Relacional</b></td><td>Dice que el nombre <b>se relaciona con algo</b> externo, no una cualidad.</td><td><b>No</b> va delante del nombre y <b>no se puede graduar</b>: *muy lácteo, *una química compañía.</td><td class="ex">producto <b>lácteo</b>, industria <b>química</b>, comida <b>coreana</b>, sentencia <b>judicial</b></td></tr>
+    <tr><td><b>Adverbial</b></td><td>Tiene sentido de <b>adverbio</b> (tiempo, modo, frecuencia).</td><td>Suele ir <b>antes</b> del nombre; se parafrasea con un adverbio: <i>el actual presidente</i> = el presidente <i>ahora</i>.</td><td class="ex"><b>actual, futuro, presente</b> · <b>probable, seguro, supuesto, presunto</b> · <b>frecuente, constante</b></td></tr>
+    <tr><td><b>Determinativo</b></td><td>Cuantifica o hace referencia.</td><td>Parece determinante pero se comporta como adjetivo.</td><td class="ex"><b>numerosos, diversos</b> (cantidad) · <b>otros, semejantes</b> (referencia)</td></tr>
+  </tbody>
+</table></div>
+<h3>Grados del adjetivo</h3>
+<ul>
+  <li><b>Positivo:</b> cielo <i>azul</i>.</li>
+  <li><b>Comparativo:</b> cielo <i>más / menos azul que…</i>. Formas propias: <i>mejor, peor, mayor, menor</i> (ya son comparativo: <b>no</b> se dice *más mejor ni *muy mejor).</li>
+  <li><b>Superlativo:</b> cielo <i>muy azul</i> / <i>azulísimo</i>.</li>
+</ul>
+<div class="tip"><b class="t">Truco</b>Para saber si un adjetivo es <b>relacional</b>, prueba a ponerle «muy» y a ponerlo delante del nombre. Si suena mal las dos veces (<i>*una muy química compañía</i>), es relacional.</div>
+<div class="tip"><b class="t">Ojo: adjetivo o adverbio</b>Si <b>concuerda</b> (<i>niños listos</i>), es adjetivo. Si no cambia nunca (<i>hablar claro</i>, no *hablar claros), es un <a href="#adverbio">adverbio adjetival</a>.</div>
+
+<!-- ===================================================== -->
+<h2 id="pronombre" style="--c:var(--c-pro)">6. Pronombre</h2>
+<p><b>Sustituye a un nombre</b> (a una persona o cosa ya nombradas, o que se señalan) y <b>va solo</b>: no necesita nombre detrás.</p>
+<div class="tw"><table>
+  <thead><tr><th>Clase</th><th>Palabras</th><th>Ejemplo</th></tr></thead>
+  <tbody>
+    <tr><td><b>Personal átono</b><br><span class="ex">(siempre pegado al verbo)</span></td><td>me, te, lo, los, la, las, le, les, se, nos, os</td><td class="ex"><b>Me</b> llamaba; <b>se</b> lo dio</td></tr>
+    <tr><td><b>Personal tónico</b></td><td>yo, mí, sí, ti, conmigo, contigo, nosotros, vosotros, él, ella, ellos, ellas</td><td class="ex"><b>Yo</b> iré; para <b>ti</b>; <b>él</b> iba solo</td></tr>
+    <tr><td><b>Demostrativo</b></td><td>este, ese, aquel (f., pl. y neutros: esto, eso, aquello)</td><td class="ex"><b>Esta</b> es la principal causa</td></tr>
+    <tr><td><b>Posesivo</b></td><td>mío, tuyo, suyo, nuestro, vuestro (f., pl.)</td><td class="ex">Todo lo <b>mío</b> es tuyo</td></tr>
+    <tr><td><b>Numeral</b></td><td>uno, dos, tres… dieciséis</td><td class="ex">Al final solo seremos <b>seis</b></td></tr>
+    <tr><td><b>Indefinido</b></td><td>algo, nada, alguien, nadie, alguno, ninguno, cualquiera, uno, otro, todo, mucho, poco, bastante, demasiado, más, menos, tanto, demás</td><td class="ex"><b>Alguien</b> llama; <b>Todos</b> estaban de acuerdo</td></tr>
+    <tr><td><b>Interrogativo / exclamativo</b></td><td>qué, quién, cuál, cuánto (con tilde)</td><td class="ex">¿<b>Quién</b> ha gritado?; ¡<b>Qué</b> ha pasado!</td></tr>
+    <tr><td><b>Relativo</b></td><td>que, quien, el cual (y variantes), cuanto</td><td class="ex">El delfín <b>que</b> vimos…; <b>quien</b> te conozca…</td></tr>
+    <tr><td><b>Recíproco</b></td><td>se, nos, os (acción entre varios)</td><td class="ex">Martín y Alba <b>se</b> adoran</td></tr>
+    <tr><td><b>Reflexivo</b></td><td>me, te, se, nos, os (la acción vuelve al sujeto)</td><td class="ex">Yo <b>me</b> lavé los dientes</td></tr>
+  </tbody>
+</table></div>
+<div class="tip"><b class="t">Truco</b>Pregúntate <b>«¿qué nombre está sustituyendo?»</b>. En <i>Esta es la principal causa</i>, «esta» sustituye a un concepto que ya se dijo → pronombre. En <i>Esta circunstancia es…</i>, «esta» acompaña a «circunstancia» → determinante.</div>
+<div class="tip"><b class="t">Relativo = tiene antecedente</b>Un pronombre relativo (o adverbio relativo) se refiere a un elemento <b>ya nombrado</b>, el <b>antecedente</b>: <i>el trabajo <b>que</b> le pidieron</i> (antecedente: «trabajo»). Se puede sustituir por <i>el cual</i>.</div>
+
+<h3>Pronombres átonos: clítico, laísmo, loísmo</h3>
+<ul>
+  <li><b>Clítico:</b> palabra átona que se apoya en otra. <b>Proclítico</b> (antes del verbo: <i>lo vi</i>) y <b>enclítico</b> (después: <i>llámelo</i>, <i>dáselo</i>).</li>
+  <li><b>Regla de oro:</b> <b>le / les = complemento indirecto</b> (a quién); <b>lo, la, los, las = complemento directo</b> (qué o a quién).</li>
+  <li><b>Laísmo</b> (incorrecto): usar «la» como indirecto. <i>*La dijeron</i> → <i>Le dijeron</i>. <i>*La di la autorización</i> → <i>Le di…</i>.</li>
+  <li><b>Loísmo</b> (incorrecto): usar «lo» como indirecto. <i>*Lo di mi acta</i> → <i>Le di…</i>. El <b>leísmo</b> se admite en algunos casos.</li>
+  <li>Con CI duplicado, el pronombre concuerda con el sintagma: <i>Les llevaron dos bocadillos <b>a Juan y a Pedro</b></i> (no *Le).</li>
+</ul>
+
+<!-- ===================================================== -->
+<h2 id="adverbio" style="--c:var(--c-adv)">7. Adverbio</h2>
+<p><b>Invariable.</b> Modifica a un <b>verbo</b> (<i>come bien</i>), a un <b>adjetivo</b> (<i>muy alto</i>) o a otro <b>adverbio</b> (<i>bastante lejos</i>); a veces afecta a <b>toda la oración</b>.</p>
+<div class="tw"><table>
+  <thead><tr><th>Tipo</th><th>Pregunta</th><th>Palabras</th></tr></thead>
+  <tbody>
+    <tr><td><b>Lugar</b></td><td>¿dónde?</td><td class="ex">aquí, allí, ahí, acá, allá, encima, dentro, debajo, fuera</td></tr>
+    <tr><td><b>Tiempo</b></td><td>¿cuándo?</td><td class="ex">ayer, hoy, mañana, ahora, entonces, ya, antes, después</td></tr>
+    <tr><td><b>Modo / manera</b></td><td>¿cómo?</td><td class="ex">bien, mal, regular, despacio, adrede, así; muchos en <b>-mente</b>: fácilmente</td></tr>
+    <tr><td><b>Cantidad / grado</b></td><td>¿cuánto?</td><td class="ex">muy, apenas, menos, poco, mucho, bastante, demasiado</td></tr>
+    <tr><td><b>Afirmación</b></td><td>—</td><td class="ex">sí, ciertamente, también</td></tr>
+    <tr><td><b>Negación</b></td><td>—</td><td class="ex">no, nunca, jamás, tampoco</td></tr>
+    <tr><td><b>Duda</b></td><td>—</td><td class="ex">quizá(s), acaso, seguramente, tal vez</td></tr>
+    <tr><td><b>Relativo</b></td><td>tiene antecedente</td><td class="ex">donde, cuando, como, cuanto</td></tr>
+    <tr><td><b>Interrogativo / exclamativo</b></td><td>pregunta o exclama (con tilde)</td><td class="ex">¿dónde?, ¿cómo?, ¿cuándo?, ¿cuánto?</td></tr>
+    <tr><td><b>Demostrativo</b></td><td>señala lugar, tiempo, cantidad o manera</td><td class="ex">aquí, allí, hoy, ayer, así, tanto</td></tr>
+    <tr><td><b>Pronominal</b></td><td>funciona como un pronombre</td><td class="ex">aquí, allí, lejos, cerca, ayer, entonces, cuándo, dónde</td></tr>
+    <tr><td><b>Adjetival</b></td><td>igual que un adjetivo pero <b>no cambia</b></td><td class="ex">hablar <b>claro</b>, respira <b>fuerte</b>, trabaja <b>duro</b></td></tr>
+    <tr><td><b>De foco</b></td><td>destaca una parte de la frase</td><td class="ex">incluso, solo, también, tampoco, apenas, casi, exclusivamente, concretamente</td></tr>
+    <tr><td><b>Oracional</b></td><td>afecta a toda la oración; va entre pausas</td><td class="ex"><b>Supuestamente</b>, el incendio fue provocado; <b>Felizmente</b>, ya trabaja</td></tr>
+  </tbody>
+</table></div>
+<div class="note warn">En el libro, la lista de «adverbio de grado» incluye <i>bien, mal, regular, adrede, despacio</i> (y la locución <i>a ciegas</i>). En otros libros eso se llama «de modo»; usa lo que diga tu profesor.</div>
+<div class="tip"><b class="t">Truco</b>Prueba a poner <b>«muy»</b> delante o a cambiar el género/número. Si no admite concordancia (*claros, *fuertes), es adverbio. <i>Habla claro</i> ✔ · *<i>Habla claros</i> ✘ → adverbio adjetival.</div>
+<div class="tip"><b class="t">Adverbio, determinante o pronombre</b><i>mucho, poco, bastante, demasiado, más, menos, tanto</i> son de las tres categorías:
+  <ul>
+    <li><b>Acompaña a un nombre</b> → determinante indefinido: <i>mucha gente</i>.</li>
+    <li><b>Va solo en lugar de un nombre</b> → pronombre indefinido: <i>muchos lo saben</i>.</li>
+    <li><b>Modifica a un verbo o adjetivo</b> → adverbio de cantidad: <i>come poco</i>, <i>bastante mentirosos</i>, <i>poco dulce</i>.</li>
+  </ul></div>
+<div class="tip"><b class="t">-mente</b>Los adverbios acabados en <i>-mente</i> son <b>palabras compuestas</b> (adjetivo femenino + mente): <i>fácil-mente</i>. Si el adverbio afecta a toda la oración y va entre pausas, es <b>oracional</b>: <i>Naturalmente, se curaron</i>. Sin pausa, es complemento de modo: <i>Se curaron naturalmente</i>.</div>
+
+<!-- ===================================================== -->
+<h2 id="conjuncion" style="--c:var(--c-con)">8. Conjunción</h2>
+<p><b>Invariable.</b> Es un <b>nexo</b>: une palabras, grupos de palabras u oraciones y no tiene función dentro de ellas.</p>
+<div class="cols">
+  <div class="card"><b>Coordinantes</b> <span class="ex">(unen elementos del mismo nivel)</span>
+    <table>
+      <tbody>
+        <tr><td><b>Copulativa</b> (suma)</td><td class="ex">y, e, ni</td></tr>
+        <tr><td><b>Adversativa</b> (oposición)</td><td class="ex">pero, mas, sin embargo, sino que…</td></tr>
+        <tr><td><b>Disyuntiva</b> (elección)</td><td class="ex">o, u, o bien</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card"><b>Subordinantes</b> <span class="ex">(introducen una oración que depende de otra)</span>
+    <table>
+      <tbody>
+        <tr><td><b>Sustantiva</b> (completiva)</td><td class="ex">que, si</td></tr>
+        <tr><td><b>Temporal</b></td><td class="ex">cuando, antes que, después que</td></tr>
+        <tr><td><b>Modal</b></td><td class="ex">como, según que</td></tr>
+        <tr><td><b>Locativa</b></td><td class="ex">donde, dondequiera</td></tr>
+        <tr><td><b>Causal</b></td><td class="ex">puesto que, ya que (y <i>porque</i>)</td></tr>
+        <tr><td><b>Comparativa</b></td><td class="ex">como, así como, más… que, tal… como</td></tr>
+        <tr><td><b>Consecutiva</b></td><td class="ex">tan… que</td></tr>
+        <tr><td><b>Ilativa</b></td><td class="ex">luego, con que, así que, por consiguiente</td></tr>
+        <tr><td><b>Condicional</b></td><td class="ex">si</td></tr>
+        <tr><td><b>Concesiva</b></td><td class="ex">aunque</td></tr>
+        <tr><td><b>Final</b></td><td class="ex">para que</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="tip"><b class="t">Truco: ¿conjunción o relativo?</b>Si lo que sigue <b>se refiere a un nombre ya dicho</b> (antecedente) → es un relativo (pronombre o adverbio): <i>el trabajo <b>que</b> le pidieron</i>. Si solo introduce una oración sin antecedente → conjunción: <i>Dijo <b>que</b> vendría</i>.</div>
+<div class="tip"><b class="t">Truco: qué / que</b>Con tilde (<i>qué, quién, cuándo, dónde, cómo, cuánto</i>) es <b>interrogativo o exclamativo</b> y pregunta o exclama. Sin tilde puede ser conjunción o relativo.</div>
+
+<!-- ===================================================== -->
+<h2 id="preposicion" style="--c:var(--c-pre)">9. Preposición</h2>
+<p><b>Invariable.</b> Introduce un <b>término</b> (un nombre, un pronombre, un adverbio o una oración) y lo relaciona con la palabra anterior: <i>casa <b>de</b> campo</i>, <i>voy <b>a</b> Madrid</i>, <i>contento <b>de</b> que vengas</i>.</p>
+<div class="card"><b>Lista del libro:</b><br>
+  <span class="ex">a, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, so, sobre, tras, durante, mediante</span><br>
+  y también, según el libro: <span class="ex">menos, salvo, incluso, excepto, vía, cabe, pro</span>.
+</div>
+<div class="tip"><b class="t">Truco</b>Después de una preposición puedes poner un pronombre tónico: <i>con <u>él</u>, para <u>ti</u></i>. Si no te cabe, probablemente no es una preposición.</div>
+<div class="tip"><b class="t">Locución preposicional</b>Varias palabras con valor de una preposición: <i>en relación con</i>, <i>en torno a</i>, <i>debido a</i>.</div>
+<div class="tip"><b class="t">Contractos</b><i>al</i> = <i>a</i> + <i>el</i> y <i>del</i> = <i>de</i> + <i>el</i> son <b>artículos contractos</b>: contienen una preposición y un artículo a la vez. También <i>contigo</i> (con + tú).</div>
+
+<!-- ===================================================== -->
+<h2 id="mismas" style="--c:#475569">10. Misma palabra, distinta categoría</h2>
+<p>Esta es la trampa típica de los ejercicios. Fíjate en <b>qué hace la palabra en la frase</b>.</p>
+<div class="tw"><table>
+  <thead><tr><th>Palabra</th><th>Usos</th></tr></thead>
+  <tbody>
+    <tr><td><b>este / esta / aquel</b></td><td><span class="pill det">det. demostrativo</span> con nombre: <i>esta <u>casa</u></i> · <span class="pill pro">pron. demostrativo</span> solo: <i>Esta es la causa</i></td></tr>
+    <tr><td><b>lo</b></td><td><span class="pill det">det. artículo (neutro)</span> + adjetivo: <i>lo bonito</i> · <span class="pill pro">pron. personal átono</span> (CD): <i>dáselo</i></td></tr>
+    <tr><td><b>que</b></td><td><span class="pill con">conjunción</span> sin antecedente: <i>dice que viene</i> · <span class="pill pro">pron. relativo</span> con antecedente: <i>el libro que leí</i></td></tr>
+    <tr><td><b>qué</b></td><td><span class="pill det">det. interrogativo/exclamativo</span> + nombre: <i>¿Qué máquinas?</i>, <i>¡Qué alegría!</i> · <span class="pill pro">pron. interrogativo</span> solo: <i>¿Qué quieres?</i></td></tr>
+    <tr><td><b>cuando / cuándo</b></td><td><span class="pill adv">adv. relativo</span> con antecedente: <i>el momento cuando me avisaron</i> · <span class="pill con">conjunción temporal</span>: <i>Cuando llegues, avísame</i> · <span class="pill adv">adv. interrogativo</span> (con tilde): <i>No sé cuándo ha llegado</i></td></tr>
+    <tr><td><b>donde / dónde, como / cómo</b></td><td>Igual: sin tilde, relativo o conjunción; con tilde, interrogativo o exclamativo (<i>¿dónde vives?, ¡cómo llueve!</i>).</td></tr>
+    <tr><td><b>mucho, poco, bastante, demasiado, más, menos</b></td><td><span class="pill det">det.</span> <i>mucha gente</i> · <span class="pill pro">pron.</span> <i>muchos lo creen</i> · <span class="pill adv">adv. de cantidad</span> <i>come mucho</i></td></tr>
+    <tr><td><b>claro, fácil, fuerte, duro</b></td><td><span class="pill adj">adjetivo</span> (concuerda): <i>un examen fácil</i> · <span class="pill adv">adv. adjetival</span> (no cambia): <i>hablar claro</i></td></tr>
+    <tr><td><b>solo</b></td><td><span class="pill adj">adjetivo</span> <i>Fernando se tomó un café solo</i> · <span class="pill adv">adv. de foco</span> <i>Fernando solo se tomó un café</i></td></tr>
+    <tr><td><b>mi / mí, tu / tú, el / él, si / sí, mas / más</b></td><td><b>La tilde cambia la categoría.</b> <i>mi</i> (det. posesivo) / <i>mí</i> (pron. tónico) · <i>tu</i> (det.) / <i>tú</i> (pron.) · <i>el</i> (artículo) / <i>él</i> (pron.) · <i>si</i> (conj. condicional) / <i>sí</i> (adv. de afirmación; también pron. tónico: <i>para sí</i>) · <i>mas</i> (conj. adversativa) / <i>más</i> (adv. de cantidad).</td></tr>
+    <tr><td><b>su / suyo, mi / mío</b></td><td><span class="pill det">det. posesivo</span> delante del nombre (<i>su casa</i>) · <span class="pill pro">pron. posesivo</span> solo (<i>la mía</i>)</td></tr>
+    <tr><td><b>cuyo</b></td><td>Siempre <span class="pill det">det. relativo-posesivo</span>: <i>la montaña cuya tradición…</i></td></tr>
+    <tr><td><b>tan / tanto</b></td><td><span class="pill adv">adv.</span> <i>tan simpático</i> · <span class="pill det">det.</span> <i>tanto dinero</i> · <span class="pill pro">pron.</span> <i>tantos lo saben</i></td></tr>
+  </tbody>
+</table></div>
+
+<!-- ===================================================== -->
+<h2 id="practica" style="--c:#475569">11. Practica (con respuestas)</h2>
+<p>Di la categoría (y la clase) de la palabra marcada. Luego abre las respuestas.</p>
+<div class="card">
+<ol>
+  <li>Mi hermano compró <mark>tres</mark> libros.</li>
+  <li><mark>Esta</mark> es mi casa.</li>
+  <li><mark>Esta</mark> casa es mía.</li>
+  <li>Ana come <mark>poco</mark>.</li>
+  <li>Hay <mark>poca</mark> gente en la calle.</li>
+  <li>La película <mark>que</mark> vimos es larga.</li>
+  <li>Dijo <mark>que</mark> vendría.</li>
+  <li>Hablaba <mark>claro</mark>.</li>
+  <li>Es una chica muy <mark>lista</mark>.</li>
+  <li>Compramos un producto <mark>lácteo</mark>.</li>
+  <li>El <mark>actual</mark> director llegó tarde.</li>
+  <li>Se fue <mark>sin</mark> despedirse.</li>
+  <li>No sé <mark>dónde</mark> vive.</li>
+  <li>La ciudad <mark>donde</mark> nació es preciosa.</li>
+  <li>Quiero ir al cine <mark>y</mark> cenar fuera.</li>
+  <li><mark>Cada</mark> alumno trae su libro.</li>
+  <li><mark>Nosotros</mark> iremos mañana.</li>
+  <li><mark>Me</mark> lo dijo ayer.</li>
+  <li>¡<mark>Qué</mark> alegría!</li>
+  <li><mark>Aunque</mark> llueva, saldré.</li>
+  <li>El <mark>coro</mark> cantó muy bien.</li>
+  <li>Admiro su <mark>honestidad</mark>.</li>
+</ol>
+<details>
+  <summary>Ver respuestas</summary>
+  <ol>
+    <li><span class="pill det">determinante numeral</span> cardinal (acompaña a «libros»).</li>
+    <li><span class="pill pro">pronombre demostrativo</span> (va solo; sustituye a un nombre).</li>
+    <li><span class="pill det">determinante demostrativo</span> (acompaña a «casa»).</li>
+    <li><span class="pill adv">adverbio de cantidad</span> (modifica al verbo «come»).</li>
+    <li><span class="pill det">determinante indefinido</span> (acompaña a «gente»).</li>
+    <li><span class="pill pro">pronombre relativo</span> (antecedente: «película»).</li>
+    <li><span class="pill con">conjunción subordinante sustantiva</span> (completiva): no hay antecedente.</li>
+    <li><span class="pill adv">adverbio adjetival</span> (no concuerda; modifica a «hablaba»).</li>
+    <li><span class="pill adj">adjetivo calificativo</span> (admite «muy»; concuerda con «chica»).</li>
+    <li><span class="pill adj">adjetivo relacional</span> (no admite «muy»; no va antes del nombre).</li>
+    <li><span class="pill adj">adjetivo adverbial</span> (antepuesto; equivale a «ahora»).</li>
+    <li><span class="pill pre">preposición</span> (introduce «despedirse»).</li>
+    <li><span class="pill adv">adverbio interrogativo</span> (con tilde, pregunta).</li>
+    <li><span class="pill adv">adverbio relativo</span> (antecedente: «ciudad»).</li>
+    <li><span class="pill con">conjunción coordinante copulativa</span>.</li>
+    <li><span class="pill det">determinante distributivo</span>.</li>
+    <li><span class="pill pro">pronombre personal tónico</span>.</li>
+    <li><span class="pill pro">pronombre personal átono</span> (pegado al verbo; es CI).</li>
+    <li><span class="pill det">determinante exclamativo</span> (acompaña a «alegría»).</li>
+    <li><span class="pill con">conjunción subordinante concesiva</span>.</li>
+    <li><span class="pill nom">nombre colectivo</span> (en singular designa un grupo).</li>
+    <li><span class="pill nom">nombre abstracto</span> (común, no contable).</li>
+  </ol>
+</details>
+</div>
+
+<div class="note warn"><b>Para el examen:</b> en las preguntas tipo «pares mínimos» te piden la categoría <b>y</b> una justificación corta (40-50 palabras como máximo y con términos gramaticales). Por ejemplo, para <i>«esta» en «Esta circunstancia es…»</i>: «determinante demostrativo, porque acompaña al nombre “circunstancia” y concuerda con él». Mira también el esquema grande: <a href="castellano-parcial-2.html">castellano-parcial-2.html</a> (§5.4).</div>
+
+</div>
+</body>
+</html>
